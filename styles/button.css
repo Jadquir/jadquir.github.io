@@ -1,0 +1,76 @@
+:root {
+    --HoverColor: #C2D8F2ff;
+    --FillColor: #5E6DC8ff;
+    }
+    .CustomButton {
+      background-color: transparent;
+      overflow: hidden;
+      
+    }
+    
+    /* Style the links inside the navigation bar */
+    .CustomButton a {
+      float: center;
+      color: var(--HoverColor);
+      text-align: center;  
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 20px;
+      -webkit-transition: all .3s ease-out;
+      -o-transition: all .3s ease-out;
+      transition: all .3s ease-out;
+      margin: 20px;
+      margin-top: 30px;
+    margin-right: 5%;
+    margin-left: 5%;
+    display: inline-flex;
+    }
+    
+    /* Change the color of links on hover */
+    .CustomButton a:hover {
+      background-color: var(--HoverColor);
+      color: black;
+    }
+    
+    /* Add a color to the active/current link */
+    .CustomButton a.active {
+      background-color: var(--FillColor);
+      color: var(--HoverColor);
+    }
+
+    .MenuButton {
+      background-color: transparent;
+      overflow: hidden;
+      
+    }
+    
+    /* Style the links inside the navigation bar */
+    .MenuButton a {
+      float: center;
+      color: var(--HoverColor);
+      text-align: center;  
+      align-content: center;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 20px;
+      -webkit-transition: all .3s ease-out;
+      -o-transition: all .3s ease-out;
+      transition: all .3s ease-out;
+      margin: 10px;
+      margin-top: 60px;
+      margin-right: 5%;
+      margin-left: 5%;
+      display: inline-flex;
+    }
+    
+    /* Change the color of links on hover */
+    .MenuButton a:hover {
+      
+      color: var(--HoverColor);
+    }
+    
+    /* Add a color to the active/current link */
+    .MenuButton a.active {
+      background-color: var(--FillColor);
+      color: var(--HoverColor);
+    }

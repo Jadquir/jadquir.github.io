@@ -1,0 +1,102 @@
+html {
+    scroll-behavior: smooth;
+}
+:root{
+--rich-black-fogra-29: #181a24;
+}
+::selection{
+	background-color: #640aff;
+	color: rgb(15,15,15);
+}
+.label1{
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+    margin-top: 5%;
+    font-size: 62px;
+    margin-bottom: 50px;
+}
+body {
+  
+    background: #272727;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--rich-black-fogra-29);
+    background-image:  url('../images/bg.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.element::-webkit-scrollbar { width: 0 !important }
+
+.body::-webkit-scrollbar { width: 25}
+.body::-webkit-scrollbar-track {
+    border: 7px solid rgb(81, 95, 187);     
+    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+.body::-webkit-scrollbar-thumb {
+     background:linear-gradient(
+         45deg,
+         rgb(81, 95, 187),
+         rgb(55, 78, 228)
+     ); 
+     border-radius: 3px;
+}
+
+#vid {
+    margin: 70px 0;
+}
+section header {
+    margin-top: 15%;
+    font-size: 62px;
+    margin-bottom: 5%;
+}
+section {
+    text-align: center;
+    padding: 8%;
+}
+
+section nav {
+    font-size: 36px;
+    line-height: 55px;
+    text-align: middle;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.par {
+    margin-top: 500px;
+    height: 650px;
+}
+
+footer {
+    font-family: 'Montserrat';
+    text-align: center;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+}
+
+.topmenu {
+    font-family: 'Montserrat';
+    text-align: center;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    top: 0pt;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+iframe{
+    width: 400px;
+    height: 225px;
+    align-items: flex-start;
+}
