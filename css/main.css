@@ -1,0 +1,100 @@
+:root{
+    --accent_color: rgb(215,0,0);
+    --main_light: aliceblue;
+    --main_dark: rgb(15, 15, 15);
+    --secondary_dark: rgb(25, 25, 25);
+}
+
+::selection{
+    background: var(--accent_color);
+}
+#home{
+    position: fixed;
+    top: 0pt;
+
+}
+body{
+    background-color: var(--main_dark);
+    color: var(--main_light);
+    font-family: "Montserrat", sans-serif;    
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.par{    
+    padding-top: 16%;
+    margin-bottom: calc(100%  + 60%);  
+    margin-top: calc(100%)  ;     
+}
+#contact{    
+    margin-bottom: calc(    15%) !important;  
+}
+.main{      
+    display: block  ;
+    margin-top: calc(80px  + 130px + (50% - 80px - 130px)/4);
+    margin-bottom: calc(100% + 60% );
+}
+section .name {    
+    font-size: 65px;
+}
+section header {
+    position: relative;
+    font-size: 45px;
+        
+}
+section nav {
+    margin-top: 30px;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: middle;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+section div{    
+    text-align: middle;
+}
+section{   
+    text-align: center;
+    vertical-align: middle;
+    /* margin-top: 350px;*/
+}
+header{
+    display: block;
+}
+html {
+    scroll-behavior: smooth;
+}
+div{
+   position: absolute;
+}
+footer{
+    font-family: 'Montserrat';
+    text-align: center;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+}
+
+.vid .details::-webkit-scrollbar { 
+    width: 0 !important;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--secondary_dark);        /* color of the tracking area */
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--accent_color);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--secondary_dark);  /* creates padding around scroll thumb */
+  }
+
+/*
+.element::-webkit-scrollbar { width: 0 !important }
+
+*/
