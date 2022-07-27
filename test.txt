@@ -1,6 +1,6 @@
 {
   "Version": 1.0,
-  "UpdateUrl": "a",
+  "UpdateUrl": "https://raw.githubusercontent.com/Jadquir/jadquir.github.io/main/test.txt",
   "DownloadLink": "https://www.youtube.com/",
   "Updates": {
     "1": "- Official Release"
