@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadquir | Applications</title>
+    <link rel="stylesheet" type="text/css" href="../styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/imagegallery.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/apps.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../scripts/navbar.js" type="text/javascript"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" defer></script>
+    <script src="../scripts/reveal.js" type="text/javascript" defer></script>
+    <link rel="icon" type="image/gif/png" href="../icons/logo.png">
+</head>
+<body onload="loadEvent()">
+    <nav class="navbar" id="navbar" onload="scrollBG()">
+        <div class="brand-title">Jadquir</div>  
+        <a class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#myworks">My Works</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div id="fixed" style="position: fixed; top: 0; left: 0; color: aliceblue;"></div>
+    <main>
+        <div class="app-card reveal-up">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/y1ddh8EYO3k" title="MRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="right">
+                <div class="description">
+                    MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.
+                </div>
+                <button><a target="_blank" href="https://jadquir.github.io/mra">Learn More</a></button>
+            </div>
+        </div>
+        <div class="app-card reveal-up">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/KPZ8WU7EdFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="right">
+                <div class="description"> 
+                    This simple application is for changing the Splash Screen of Adobe Photoshop in just a few seconds.<br>
+                    It's very easy to use, just follow the instructions in the video<br>
+                    (There is an additional .psd file. This .psd file contains an editable custom splash screen)
+                </div> 
+                <button><a target="_blank" href="https://jadquir.itch.io/photoshop-splash-screen-changer">Download</a></button>
+            </div>
+        </div>
+        <div class="app-card  reveal-up more-top">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/0xJpJrTPIVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="right">
+                <div class="description">
+                    This simple application is for changing the UI color of Adobe Photoshop in just a few seconds.<br>
+                    It's very easy to use, just follow the instructions in the video
+                </div>
+                <button><a target="_blank" href="https://jadquir.itch.io/photoshop-ui-color-changer">Download</a></button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        This website is made by Jadquir. Copyright © 2022
+    </footer>
+</body>
+</html>
