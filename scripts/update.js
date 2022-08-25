@@ -32,8 +32,8 @@ function SetUpdate(){
   console.log("started update changelog");
   const start = Date.now();
 
-  loadJSON("./files/updates.json",
-  //"https://raw.githubusercontent.com/Jadquir/mra/main/files/updates.json",
+  loadJSON(//"./files/updates.json",
+  "https://raw.githubusercontent.com/Jadquir/mra-files/main/updates.json",
   function(data) { 
     createElements(data); },
   function(xhr) { console.error(xhr); }
