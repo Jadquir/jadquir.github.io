@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRA | Jadquir</title>
+    <link rel="stylesheet" type="text/css" href="../../styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/imagegallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/apps.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="../../scripts/navbar.js" type="text/javascript"></script>
+    <script src="../../scripts/bg.js" type="text/javascript"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" defer></script>
+    <script src="../../scripts/reveal.js" type="text/javascript" defer></script>
+    <link rel="icon" type="image/gif/png" href="../../icons/logo.png"> 
+</head>
+<body onload="loadEvent()">
+    <nav class="navbar" id="navbar" onload="scrollBG()">
+      <div class="brand-title"><a href="../../index.html">Jadquir</a></div>  
+        <a class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="../../index.html">Main Home</a></li>
+            <li><a href="index.html">MRA Home</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="../../index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+    </nav>s
+    <div id="fixed" style="position: fixed; top: 0; left: 0; color: aliceblue;"></div>
+    <section id="summary" class="summary">
+      <div class="hiText">
+          MRA is a &nbsp;
+          <div style="color: #8583ff !important">
+              Music Recognition Application
+          </div>
+      </div>
+      <div class="imText">
+          <div >MRA</div>
+      </div>
+      <button><a href="#about">Learn More</a></button>
+    </section>
+  
+    <section id="about" class="about reveal-up mra">
+      <div class="title">About MRA</div>
+      <div class="text">
+        MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.<br>
+        It uses Shazam API for identifying music.
+      </div>
+      <button><a href="#screenshots">See screenshots</a></button>
+  </section>
+
+  <section id="screenshots" class="screenshots reveal-up mra">
+    <div class="title">Screenshots</div>
+    <div>
+      <div class="app-card reveal-up">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/y1ddh8EYO3k" title="MRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="right">
+            <div class="description">
+              You can watch the showcase video. 
+            </div>
+        </div>
+      </div>
+      <div class="app-card reveal-up">
+        <div class="video-container img">
+          <img src="files/screenshots/1.png">
+        </div>
+        <div class="right">
+            <div class="description">
+              - It has very basic UI that you can easily adapt.
+            </div>
+        </div>
+      </div>
+      <div class="app-card reveal-up">
+        <div class="video-container img">
+          <img src="files/screenshots/3.png">
+        </div>
+        <div class="right">
+            <div class="description">
+              - When it found the music you get this screen.<br><br>
+              - You can see the preview of the music with the first button under the image.<br><br>
+              - You can see the lyric of the music with the second button under the image.<br><br>
+              - You can copy the full name of the music with the third button under the image.<br><br>
+              - You can see similar kinds of music with the fourth button under the image.<br><br>
+              - You can download the music with the fifth button under the image.
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="app-card reveal-up">
+      <div class="video-container img">
+        <img src="files/screenshots/4.png">
+      </div>
+      <div class="right">
+          <div class="description">- You can copy the name of the song name,artist,album,genre and release date by right clicking and click copy.
+
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="app-card reveal-up">
+    <div class="video-container img">
+      <img src="files/screenshots/5.png">
+    </div>
+    <div class="right">
+        <div class="description">
+          - You can also see the links for this music such as Spotify, Youtube, Apple Music, Shazam, Deezer, Youtube Music and so on.<br><br>
+          - Simply click to open the link or right click to see more options.
+        </div>
+    </div>
+  </div>
+
+  <button style="width: auto !important;"><a href="download.html">Download Now</a></button>
+</div>
+  </section>
+    <footer>
+        This website is made by Jadquir. Copyright © 2022
+    </footer>
+</body>
+</html>

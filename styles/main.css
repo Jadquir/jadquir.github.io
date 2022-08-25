@@ -149,15 +149,16 @@ section .hiText{
 }
 
 
-button{
-    padding: 0px 0px 0px 0px;
+button{    
+    padding: 5px 15px 5px 15px;
     position: relative;
     background-color: var(--accent);
     color: #D8ECFF;
     border: none;
     cursor: pointer;
 
-    width: 150px;
+    min-width: 150px;
+    width: fit-content;
     height: 45px;
     border-radius: 6px;
     
@@ -179,7 +180,19 @@ button:active{
 #about{
     vertical-align: middle;
     padding-right: 25px;
-    
+}
+.mra button{
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+#summary .button-holder{
+    display: flex;
+    flex-direction: row;
+}
+
+#summary .button-holder button:not(:first-child){
+    margin-left: 15px;
 }
 section .title{
     
@@ -501,6 +514,13 @@ font-weight: normal;
     .navbar-links.active {
         display: flex;
     }
+    #summary .button-holder{
+        flex-direction: column;
+    }
+    #summary .button-holder button:not(:first-child){
+        margin-left: 0px !important;
+        margin-top: 15px;
+    }
 }
 
 .social{
@@ -558,4 +578,211 @@ footer{
     margin-bottom: 30px;
     text-align: center;
     color: #d8ecff36;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bubble-container{
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -999;
+}
+
+.bubbles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubbles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px; 
+    background: rgb(75 76 176);
+    opacity: .1;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    border-radius: 50%;
+    z-index: 0;
+    
+}
+
+.bubbles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.bubbles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.bubbles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.bubbles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.bubbles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.bubbles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.bubbles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.bubbles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.bubbles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.bubbles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+.bubbles li:nth-child(11){
+    left: 31%;
+    width: 69px;
+    height: 69px;
+    animation-delay: 1s;
+    animation-duration: 6s;
+}
+
+.bubbles li:nth-child(12){
+    left: 27%;
+    width: 89px;
+    height: 89px;
+    animation-delay: 3s;
+    animation-duration: 13s;
+}
+
+.bubbles li:nth-child(13){
+    left: 70%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 1s;
+    animation-duration: 9s;
+}
+
+.bubbles li:nth-child(14){
+    left: 10%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 0s;
+    animation-duration: 5s;
+}
+
+.bubbles li:nth-child(15){
+    left: 73%;
+    width: 35px;
+    height: 35px;
+    animation-delay: 0s;
+    animation-duration: 5s;
+}
+.bubbles li:nth-child(16){
+    left: 97%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 4s;
+    animation-duration: 8s;
+}
+.bubbles li:nth-child(17){
+    left: 41%;
+    width: 140px;
+    height: 140px;
+    animation-delay: 5s;
+    animation-duration: 15s;
+}
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: .4;
+        border-radius: 50%;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 35%;
+    }
+
 }

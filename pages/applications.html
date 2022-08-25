@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/apps.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
     <script src="../scripts/navbar.js" type="text/javascript"></script>
+    <script src="../scripts/bg.js" type="text/javascript"></script>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
@@ -19,7 +20,7 @@
 </head>
 <body onload="loadEvent()">
     <nav class="navbar" id="navbar" onload="scrollBG()">
-        <div class="brand-title">Jadquir</div>  
+        <div class="brand-title"><a href="../index.html">Jadquir</a></div>  
         <a class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -35,7 +36,7 @@
         </div>
     </nav>
     <div id="fixed" style="position: fixed; top: 0; left: 0; color: aliceblue;"></div>
-    <main>
+    <main class="app-card-container">
         <div class="app-card reveal-up">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/y1ddh8EYO3k" title="MRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -44,7 +45,7 @@
                 <div class="description">
                     MRA (short for Music Recognition Application) is a music recognition application, or music identifier, like Shazam but for PC.
                 </div>
-                <button><a target="_blank" href="https://jadquir.github.io/mra">Learn More</a></button>
+                <button><a href="mra/index.html">Learn More</a></button>
             </div>
         </div>
         <div class="app-card reveal-up">

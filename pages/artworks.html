@@ -10,44 +10,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
 
     <script src="../scripts/navbar.js" type="text/javascript"></script>
+    <script src="../scripts/bg.js" type="text/javascript"></script>
 
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" defer></script>
     <script src="../scripts/reveal.js" type="text/javascript" defer></script>
+    <script src="../scripts/imageviewer.js" type="text/javascript" defer></script>
     <script>
-      $(document).ready(function() {
-
-      // required elements
-      var imgPopup = $('.img-popup');
-      var imgCont  = $('img');
-      var popupImage = $('.img-popup img');
-      var closeBtn = $('.close-btn');
-              
-      // handle events
-      imgCont.on('click', function() {
-        var img_src = $(this).attr('src');
-        img_src = img_src.replace("low_res","high_res");
-        imgPopup.children('img').attr('src', img_src);
-        imgPopup.addClass('opened');
-      });
       
-      $(imgPopup, closeBtn).on('click', function() {
-        imgPopup.removeClass('opened');
-        imgPopup.children('img').attr('src', '');
-      });
-      
-      popupImage.on('click', function(e) {
-        e.stopPropagation();
-      });
-      
-      });
   </script>
 </head>
 <body onload="loadEvent()">
     <nav class="navbar" id="navbar" onload="scrollBG()">
-        <div class="brand-title">Jadquir</div>
+      <div class="brand-title"><a href="../index.html">Jadquir</a></div>  
         <a class="toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -66,6 +43,7 @@
   <!-- <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0, .5); z-index: 999;">
         
     </div>--> 
+    
     <div class="img-popup">
       <img src="" alt="Popup Image">
       <div class="close-btn">
