@@ -324,9 +324,6 @@ svg{
     justify-content: flex-start;
     align-items: stretch;
 }
-.contact-container button{
-  /*  border: 1px solid var(--fg);*/
-}
 .contact-container .left{    
     width: 100%;
     padding: 25px;
