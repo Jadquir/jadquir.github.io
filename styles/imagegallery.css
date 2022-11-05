@@ -44,7 +44,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: #4f4dc6ab;
+    background: var( --accent-halfop);
     backdrop-filter: blur(2px);
     display: flex;
     justify-content: center; 
@@ -79,7 +79,7 @@
   
   .close-btn .bar {
     height: 4px;
-    background: #D8ECFF;
+    background: var(--fg);
   }
   
   .close-btn .bar:nth-child(1) {
