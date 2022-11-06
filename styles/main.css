@@ -9,6 +9,8 @@
     --bg3: #4f4dc600;
     --input-bg: #18181a;
 
+    --hero-color: #FF8768;
+
     --accent: hsl(241, 51%, 54%);
     --accent-halfop: hsla(241, 51%, 54%, 0.5);
     
@@ -35,6 +37,20 @@
     --size-7: calc(var(--size-6) + var(--size-6) / 3); /* 24px */ 
 }
 
+.avatar img{
+    margin-bottom: 10px;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+     border: 3px solid var(--accent-lighter);
+    /* background: red; */
+    /* background: linear-gradient(to right bottom, #ff0000 0%, #8100ff 100%); */
+    /* background-blend-mode: multiply; */
+}
 .subTitle{
     color: var(--accent-light);
 }
@@ -130,17 +146,24 @@ section .imText{
     justify-content: left;
 
 }
-
+.hero-text{
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+.typed-text{
+    color: var(--hero-color);
+}
 .hidden {
     opacity:0;
   }
   
 @media (max-width: 800px) {
     .console-container{
-        height: 300px;
+        height: 100px;
     }
     section .imText{
         display: initial;
+        min-height: 240px;
     }
     
 }
@@ -308,10 +331,11 @@ svg{
 @media  (max-height: 700px) {
 
     #summary{
-        margin-top: 60px;
+       /* margin-top: 80px;*/
     }
     section .imText {
-        margin-bottom: 10px;
+        margin-bottom: 10px;   
+        min-height: 240px;
     }
 }
 @media  (max-width: 1000px) {
@@ -358,21 +382,18 @@ svg{
     background-color: var(--input-bg);
     box-shadow: var(--card-underline);
     -webkit-box-shadow: var(--card-underline);
-}.contact-container .right .textbox input{
-    background-color: var(--accent-hsl);
+}
+
+.contact-container .left form .textbox input:focus, .contact-container .left .textbox textarea:focus{
+    outline-width: 0;
+    -webkit-box-shadow:var(--card-glow), var(--card-glow);
+    box-shadow: var(--card-glow), var(--card-glow);
 }
 
 ::placeholder {
     color: var(--fg);
     opacity: 0.5; 
   }
-input:focus
-,textarea:focus{ 
-    outline-width: 0;
-    -webkit-box-shadow:var(--card-glow), var(--card-glow);
-    box-shadow: var(--card-glow), var(--card-glow);
-
-}
 textarea{
     min-height: calc(var(--size-4) + 5px);
 }
@@ -504,7 +525,7 @@ margin-right: 25px;
     }
     nav{
         width: 90%;
-        margin-left: -2.5%;
+        margin-left: -4%;
       
     }
     .navbar {

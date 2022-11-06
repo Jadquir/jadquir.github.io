@@ -10,7 +10,7 @@ gsap.utils.toArray(".reveal-up").forEach(function (elem) {
   ScrollTrigger.create({
     trigger: elem,
     start: top,
-    end: "bottom 20%",
+    end: "bottom 10%",
     markers: false,
     onEnter: function () {
       gsap.fromTo(
