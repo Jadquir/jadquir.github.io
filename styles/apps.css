@@ -15,12 +15,13 @@
     margin-bottom: 50px;
     padding: 25px;
     border-radius: 13px;
-    background-color: var(--card-bg2);
-    filter: drop-shadow(0px 5px 0px var(--accent-hex));
+    background-color: var(--card-bg);
+    box-shadow: var(--card-underline2);
+    -webkit-box-shadow: var(--card-underline2);
 
 }
 
-@media  (max-width: 1200px) {
+@media  (max-width: 1300px) {
     
     .app-card{
         flex-direction: column;
@@ -44,9 +45,14 @@
         margin-left: 45px;
 
     }
+    .app-card .right .title{
+        margin-left: 0px !important;
+        margin-top: 25px;
+
+    }
     .app-card .right .description{
         margin-left: 0px !important;
-        margin-top: 45px;
+        margin-top: 15px;
 
     }
     
@@ -54,8 +60,20 @@
         margin-top: 35px;
         margin-bottom: 15px;
         position: relative !important;
+        max-width: none !important;
     }
 }
+.app-card .right .title{
+    font-size: var(--size-1);
+    font-weight: 400;
+    color: var(--accent-lighter);
+
+}   
+ .app-card .right .description{
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+
 .app-card .video-container{
     min-width: 566px;
     max-width: 566px;
@@ -68,14 +86,16 @@
     width: 100%;
     height: 100%;
     border-radius: 13px;
-    filter: drop-shadow(0px 0px 3px var(--accent))
+    box-shadow: var(--card-glow);
+    -webkit-box-shadow: var(--card-glow);
 }
 .app-card .video-container img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 13px;
-    filter: drop-shadow(0px 0px 3px var(--accent))
+    box-shadow: var(--card-glow);
+    -webkit-box-shadow: var(--card-glow);
 }   
 .app-card .right{
     margin: 10px;
@@ -85,12 +105,13 @@
 }
 .app-card .right::selection{
     background-color: var(--bg);
-    color: var(--accent-hex);
+    color: var(--accent-hsl);
 
 }
 
 .app-card .right button{
     position: absolute;
     width: 100%;
+    max-width: 680px;
     bottom: 0px;
 }

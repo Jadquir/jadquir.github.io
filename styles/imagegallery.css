@@ -11,15 +11,24 @@
   .column {
     flex: 25%;
     max-width: 25%;
-    padding: 0 4px;
+    padding: 0 10px;
   }
   .column img {
     vertical-align: middle;
-    margin-top: 8px;
+    margin-top: 15px;
     cursor: pointer;
+    border-radius: 5px;
+    /*
+    box-shadow: var(--card-underline);
+    -webkit-box-shadow: var(--card-underline);
+    */
   }
   
-  
+  .column img:hover{
+    box-shadow: var(--card-glow);
+    -webkit-box-shadow: var(--card-glow);
+    
+  }
   @media screen and (max-width: 800px) {
     .column {
       flex: 50%;

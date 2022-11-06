@@ -4,30 +4,42 @@
     opacity: 0;
 }
 :root{
-    --bg: #181818;
-    --accent: rgb(79, 77, 198);
-    --accent-hex: #4f4dc6;
-    --accent-halfop: #4f4dc6ab;
+    --bg: #18181a;
+    --card-bg: #212125;
+    --bg3: #4f4dc600;
+    --input-bg: #18181a;
+
+    --accent: hsl(241, 51%, 54%);
+    --accent-halfop: hsla(241, 51%, 54%, 0.5);
+    
+    --accent-light: hsl(241, 51%, 64%);
+    --accent-lighter: hsl(241, 51%, 84%);
+    
+    --accent-dark: hsl(241, 51%, 44%);
+    --accent-darker: hsl(241, 51%, 34%);
+
     --fg: #F2F2F2;
     --fg-halfop: #d8ecff36;
-    --card-bg: #252527;
-    --card-bg2: #252527;
-    --bg2: #4d4bb4;
-    --bg3: #4f4dc600;
-    --input-bg: #181818;
-    --hover1: #cbb7ff;
 
-
+    --card-underline: 0 1.5px 0px 0px var(--accent); 
+    --card-underline2: 0 5px 0px 0px var(--accent); 
+    --card-glow: 0px 0px 10px var(--accent);
+    --card-focus: var(--card-underline) , var(--card-glow);
+ /*   --hover1: #cbb7ff;*/
     --size-1: 25px; 
     --size-2: 60px; 
     --size-3: 15px; 
     --size-4: 20px; 
     --size-5: 50px; 
     --size-6: calc(var(--size-3) + var(--size-3) / 15 );  /* 16px */ 
-    --size-7: calc(var(--size-6) +var(--size-6) / 3); /* 24px */ 
+    --size-7: calc(var(--size-6) + var(--size-6) / 3); /* 24px */ 
+}
+
+.subTitle{
+    color: var(--accent-light);
 }
 ::selection{
-    background-color: var(--accent-hex);
+    background-color: var(--accent);
     color: var(--bg);
 
 }
@@ -241,8 +253,9 @@ section .title{
 }
 
 .card:hover{
-    box-shadow: 0px 13px 1px var(--accent-hex);
-    box-shadow: 0px 0px 10px var(--accent-hex);
+  /*  box-shadow: 0px 13px 1px var(--accent-hsl);*/
+    box-shadow:  var(--card-underline2), var(--card-glow);
+    -webkit-box-shadow:  var(--card-underline2), var(--card-glow);
 }
 .card{
     background-color: var(--card-bg);
@@ -251,7 +264,8 @@ section .title{
 
     padding: 45px;
     border-radius: 13px;
-    
+    box-shadow: var(--card-underline2);
+    -webkit-box-shadow: var(--card-underline2);
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.545));
 }
 .card .icon{
@@ -259,7 +273,7 @@ section .title{
 }
 .card .title{
     /* font-size: 24px;*/
-    color: var(--accent-hex);
+    color: var(--accent-light);
     font-size: var(--size-7); 
     font-weight: bold;
     margin-bottom: 20px;
@@ -308,6 +322,8 @@ svg{
     .contact-container .left{   
         width: auto !important;
         border-radius: 10px 10px 0px 0px !important; 
+        box-shadow:none;
+        -webkit-box-shadow:none;
     }
     .contact-container .right{
         width: auto !important;
@@ -323,6 +339,7 @@ svg{
     font-size: var(--size-4);
     justify-content: flex-start;
     align-items: stretch;
+    margin-bottom: 15px;
 }
 .contact-container .left{    
     width: 100%;
@@ -330,15 +347,19 @@ svg{
     background-color:var(--card-bg);
 
     border-radius: 15px 0px 0px 15px ;
+    box-shadow: var(--card-underline2);
+    -webkit-box-shadow: var(--card-underline2);
 }
-.contact-container .left .textbox{
+.contact-container .left form .textbox{
     width: 100%;
     margin-bottom: 15px;
 }
-.contact-container .left .textbox input, .contact-container .left .textbox textarea{
+.contact-container .left form .textbox input, .contact-container .left .textbox textarea{
     background-color: var(--input-bg);
+    box-shadow: var(--card-underline);
+    -webkit-box-shadow: var(--card-underline);
 }.contact-container .right .textbox input{
-    background-color: var(--accent-hex);
+    background-color: var(--accent-hsl);
 }
 
 ::placeholder {
@@ -346,10 +367,10 @@ svg{
     opacity: 0.5; 
   }
 input:focus
-,textarea:focus{
-	border-color: inherit;
-    -webkit-box-shadow: none;
-	box-shadow: none;
+,textarea:focus{ 
+    outline-width: 0;
+    -webkit-box-shadow:var(--card-glow), var(--card-glow);
+    box-shadow: var(--card-glow), var(--card-glow);
 
 }
 textarea{
@@ -363,10 +384,10 @@ textarea{
     color: var(--fg);
     border-radius: 5px;
     padding: 10px;
-
     font-size: calc(var(--size-4) - 4px); 
     border: none;
 }
+
 .contact-container .right{
 
     width: 100%;
@@ -374,11 +395,14 @@ textarea{
     padding-top: 50px;
     background-color:var(--card-bg);
 
+    box-shadow: var(--card-underline2);
+    -webkit-box-shadow: var(--card-underline2);
     border-radius: 0px 15px 15px 0px ;
 }
 .contact-container .right .title{
 font-size: var(--size-4);
 font-weight: normal;
+margin-right: 25px;
 }
 
 
@@ -441,7 +465,7 @@ font-weight: normal;
 
 .navbar-links li:hover {
     font-weight: bold;
-    background-color: var(--bg2);
+    background-color: var(--accent-darker);
 }
 
 .toggle-button {
@@ -507,7 +531,7 @@ font-weight: normal;
     .navbar-links ul li {
         text-align: center;
         background-color: var(--bg);
-        border: 2px solid var(--accent-hex);
+        border: 2px solid var(--accent);
     }
 
     .navbar-links ul li a {
@@ -546,7 +570,7 @@ font-weight: normal;
     font-size: calc(var(--size-6));
 }
 .social .url:hover{
-    color: var(--hover1);
+    color: var(--accent-lighter);
     text-shadow: 0 0 10px rgba(0, 0, 0, 1);
     text-decoration: underline !important;
 }
