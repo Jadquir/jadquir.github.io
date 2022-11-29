@@ -5,6 +5,7 @@
 }
 :root{
     --bg: #18181a;
+    --bg-rgb: rgb(24, 24, 26);
     --card-bg: #212125;
     --bg3: #4f4dc600;
     --input-bg: #18181a;
@@ -15,7 +16,9 @@
     --accent-halfop: hsla(241, 51%, 54%, 0.5);
     
     --accent-light: hsl(241, 51%, 64%);
+    --accent-light: #615fc4;
     --accent-lighter: hsl(241, 51%, 84%);
+    --accent-lightest: hsl(240, 65%, 92%);
     
     --accent-dark: hsl(241, 51%, 44%);
     --accent-darker: hsl(241, 51%, 34%);
