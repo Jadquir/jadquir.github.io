@@ -202,6 +202,46 @@ section .hiText{
 }
 
 
+.m-store-button a {
+    color: var(--card-bg);
+    
+    filter: brightness(160%);
+    font-size: medium;
+}
+.m-store-button:hover{
+    filter: brightness(85%);
+}
+.m-store-button:active{
+    filter: brightness(55%);
+}
+.m-store-button{
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/archive/0/08/20210910141027%21Microsoft_Store_app_icon.png");
+    
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position-x: 10px;
+    background-position-y: center;
+    padding-left: 50px;
+
+    background-color: #e2e2e6;
+}
+
+ms-store-badge::part(img) {
+    max-height: 45px;
+    
+    -webkit-transition: 0.1s ease-in-out;
+    -moz-transition: 0.1s ease-in-out;
+    -ms-transition: 0.1s ease-in-out;
+    -o-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+}
+
+ms-store-badge::part(img):hover{
+    filter: brightness(85%);
+}
+ms-store-badge::part(img):active{
+    filter: brightness(55%);
+}
 button{    
     padding: 5px 15px 5px 15px;
     position: relative;
@@ -244,7 +284,7 @@ button:active{
     flex-direction: row;
 }
 
-#summary .button-holder button:not(:first-child){
+#summary .button-holder *:not(:first-child){
     margin-left: 15px;
 }
 section .title{
@@ -576,7 +616,7 @@ margin-right: 25px;
     #summary .button-holder{
         flex-direction: column;
     }
-    #summary .button-holder button:not(:first-child){
+    #summary .button-holder *:not(:first-child){
         margin-left: 0px !important;
         margin-top: 15px;
     }
