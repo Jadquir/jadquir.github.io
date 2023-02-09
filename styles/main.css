@@ -17,6 +17,7 @@
     --hero-color: #FF8768;
 
     --accent: hsl(241, 51%, 54%);
+    --accent-rgb-0: rgba(80, 78, 198, 0);
     --accent-halfop: hsla(241, 51%, 54%, 0.5);
     
     --accent-light: hsl(241, 51%, 64%);
@@ -483,7 +484,7 @@ margin-right: 25px;
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--accent);
+    background-color: var(--accent-rgb-0);
     backdrop-filter: blur(15px);
     
     -webkit-backdrop-filter: blur(15px);
