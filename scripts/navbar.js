@@ -1,31 +1,40 @@
+const toggleButton = document.querySelector(".nav-toggle");
+const navBar =  document.querySelector(".primary-navigation");
+const menuIcon =  document.querySelector("#hamburger");
+const header =  document.querySelector(".primary-header");
 
-function loadEvent(){
-    document.addEventListener("scroll",() => {
-        scrollBG();
-    }); 
-    scrollBG();
-    for (let button1 of document.querySelectorAll("button")) {
-        button1.onclick = () => {  button1.querySelector("a").click(); }
+toggleButton.addEventListener("click",()=>{
+    const isVisible = navBar.getAttribute("data-visible");
+    const newVal = isVisible === "false" ?  "true" : "false";
+
+    menuIcon.className = isVisible === "false" ?  "animate" : "";
+    navBar.setAttribute("data-visible",newVal);
+    header.setAttribute("data-visible",newVal);
+    toggleButton.setAttribute("aria-expanded",newVal);
+});
+window.addEventListener('scroll', function() {
+  var scrollPosition = window.scrollY;
+  var container = document.querySelector('#navContainer');
+  if (container) {
+    if (scrollPosition > 20 && !container.classList.contains('open')) {
+      container.classList.add('open');
+    } else if(scrollPosition <= 20) {
+      container.classList.remove('open');
     }
-    for (let li1 of document.querySelectorAll("li")) {
-        li1.onclick = () => {  li1.querySelector("a").click(); }
-    }
+  }
+ 
+});
+// const circle = document.querySelector('.circle');
+// const downloadBtn = document.querySelector('.download-btn');
+// downloadBtn.addEventListener('click', () => {
+//   const svg = new Blob([circle.outerHTML], {type: 'image/svg+xml'});
+//   const url = URL.createObjectURL(svg);
+//   const link = document.createElement('a');
+//   link.href = url;
+//   link.download = 'circle.svg';
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+//   URL.revokeObjectURL(url);
+// });
 
-    const toggleButton = document.getElementsByClassName('toggle-button')[0];
-    const navbarLinks = document.getElementsByClassName('navbar-links')[0];
-    toggleButton.addEventListener('click', () => {
-        navbarLinks.classList.toggle('active');
-    })
-}
-
-function scrollBG(){
-     var scrollTopVal = $(document).scrollTop() ;
-        var alpha = scrollTopVal / 300;
-    if(alpha > .85){ alpha = .85 ;}
-
-    document.getElementById("fixed").innerHTML = alpha;
-    var navbar = document.getElementById("navbar");
-    current_color = getComputedStyle(navbar).getPropertyValue("background-color");
-    match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(current_color);
-    navbar.style.backgroundColor = "rgba(" + [match[1],match[2],match[3],alpha].join(',') +")";
-}

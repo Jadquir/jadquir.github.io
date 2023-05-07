@@ -1,51 +1,54 @@
-// function([string1, string2],target id,[color1,color2])    
-consoleText(['a Student', 'a Freelancer'], 'type-text',['#FF8768','#009FA8']);
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
 
-function consoleText(words, id, colors) {
-  if (colors === undefined) colors = ['#fff'];
+const textArray = ['a Student ', 'a Freelancer '];
+const typingDelay = 150;
+const erasingDelay = 100;
+const newTextDelay = 1500; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 50);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+  typedTextSpan.textContent = "";
+  
   var visible = true;
-  var con = document.getElementById('console');
-  var letterCount = 1;
-  var x = 1;
-  var waiting = false;
-  var target = document.getElementById(id);
-  target.setAttribute('style', 'color:' + colors[0])
-  window.setInterval(function() {
-
-    if (letterCount === 0 && waiting === false) {
-      waiting = true;
-      target.innerHTML = words[0].substring(0, letterCount)
-      window.setTimeout(function() {
-        var usedColor = colors.shift();
-        colors.push(usedColor);
-        var usedWord = words.shift();
-        words.push(usedWord);
-        x = 1;
-        target.setAttribute('style', 'color:' + colors[0])
-        letterCount += x;
-        waiting = false;
-      }, 700)
-    } else if (letterCount === words[0].length + 1 && waiting === false) {
-      waiting = true;
-      window.setTimeout(function() {
-        x = -1;
-        letterCount += x;
-        waiting = false;
-      }, 700)
-    } else if (waiting === false) {
-      target.innerHTML = words[0].substring(0, letterCount)
-      letterCount += x;
-    }
-  }, 120)
   window.setInterval(function() {
     if (visible === true) {
-      con.className = 'console-underscore hidden'
+      cursorSpan.className = 'cursor hidden'
       visible = false;
 
     } else {
-      con.className = 'console-underscore'
-
+      cursorSpan.className = 'cursor'
       visible = true;
     }
   }, 400)
-}
+});

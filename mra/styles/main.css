@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+:root {
+    --accent: #2657ea;
+    --accent-09: rgba(38, 87, 234, 0.9);
+
+    --accent-lighter: #5e77f7;
+    --accent-lighter-2: #3362f1;
+    --accent-lighter-op1: #5e78f712;
+    --accent-darker: #1c45b5;
+    --card-glow: 0px 0px 10px var(--accent);
+
+
+    --size-1: 25px;
+    --size-2: 60px;
+    --size-3: 15px;
+    --size-4: 20px;
+    --size-5: 50px;
+    --size-6: calc(var(--size-3) + var(--size-3) / 15);
+    /* 16px */
+    --size-7: calc(var(--size-6) + var(--size-6) / 3);
+    /* 24px */
+}
+
+@media (max-width: 55em) {
+    body {
+        width: 100%;
+        margin-left: 0px;
+        /* margin-left: calc(10% / 2); */
+    }
+
+    section {
+        margin-bottom: 250px !important;
+    }
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+body {
+    --accent: #2657ea;
+    /*  background-color: #101014;*/
+    /* background-color: #202020; */
+    background-color: #121316;
+    color: #f3f3f5;
+    font-family: Poppins;
+    width: 85%;
+    margin-left: calc(15% / 2);
+
+    overflow-x: hidden;
+}
+
+section {
+    color: var(--fg);
+    min-height: 100vh !important;
+    margin-bottom: 1vh;
+    height: auto !important;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.landing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 90%;
+    padding: 0px 5%;
+
+}
+
+
+@media (max-width: 1400px) {
+    .landing {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.landing .details .text {
+    margin-right: 45px;
+}
+
+.landing .details h1 {
+    font-size: var(--size-5);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.landing .details span {
+    margin-bottom: 20px;
+}
+
+.landing .details .download-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.visibleArea {
+    width: 700px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.images {
+    display: flex;
+    list-style: none;
+    transition: all 1s ease;
+    padding: 0;
+    gap: 0px;
+}
+
+.slider {
+    width: 750px;
+    overflow: hidden;
+    border-radius: 3px;
+    filter: drop-shadow(3px 10px 15px 0px rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 1400px) {
+
+    .slider {
+        width: 90vw !important;
+        overflow: hidden;
+        border-radius: 3px;
+        filter: drop-shadow(3px 10px 15px 0px rgba(0, 0, 0, 0.4));
+    }
+
+    .slider-image {
+        width: 90vw !important;
+        /* height: 250px; */
+        aspect-ratio: auto;
+        border-radius: 15px;
+
+    }
+
+    section:first-of-type {
+        margin-top: 10vh;
+    }
+
+
+}
+
+.recom-text {
+    text-align: center;
+
+    font-size: large;
+    font-weight: 500;
+}
+
+.slider-image {
+    width: 750px;
+    /* height: 250px; */
+    aspect-ratio: auto;
+    border-radius: 15px;
+
+}
+
+
+
+section.downloads {
+    display: flex;
+    /* justify-content: left; */
+    align-items: center;
+}
+
+section.downloads h1 {
+    font-size: 55px;
+}
+
+section.downloads .download-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.download-button {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.download-button .download-text {
+    margin-right: 25px;
+
+    min-width: 295px;
+
+}
+
+/* Customize the badge's appearance */
+ms-store-badge::part(img) {
+    max-height: 52px;
+}
+
+ms-store-badge {
+    transition: all 0.1s ease;
+}
+
+ms-store-badge:hover {
+    filter: brightness(75%);
+}
+
+ms-store-badge:focus {
+    filter: brightness(45%);
+}
+
+a.margin {
+    margin-right: 25px;
+}
+
+
+@media (max-width: 850px) {
+
+
+    .download-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        row-gap: 12px;
+    }
+
+    section.downloads .download-container {
+        gap: 50px;
+    }
+}

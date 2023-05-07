@@ -1,0 +1,105 @@
+.app-card-container {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.app-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: 50px;
+    width: 1300px;
+    padding: 25px;
+    border-radius: 13px;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-underline2);
+    -webkit-box-shadow: var(--card-underline2);
+}.app-card .video-container {
+    min-width: 566px;
+    max-width: 566px;
+    width: 566px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+}.app-card .right {
+    margin: 10px;
+    margin-left: 45px;
+    position: relative;
+}.app-card .right .title {
+    font-size: var(--size-1);
+    font-weight: 400;
+    color: var(--accent-lighter);
+}.app-card .right .description {
+    margin-top: 15px;
+    margin-bottom: 70px;
+}.app-card .right .button {
+    position: absolute;
+    bottom: 0px;
+}.app-card .video-container iframe ,
+.app-card .video-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    box-shadow: var(--card-glow);
+    -webkit-box-shadow: var(--card-glow);
+    object-fit: cover;
+}
+.separator{
+    width: 50%;
+    max-width: 1000px;
+    height: 1px;
+    justify-self: center;
+    /* margin-right: 10%; */
+    background-color: var(--accent-lighter);
+    /* margin-top: 20px; */
+    margin-bottom: 50px;
+}
+
+
+
+@media  (max-width: 1300px) {
+    
+    .app-card{
+        flex-direction: column;
+        width: 100% !important;
+    }
+    .app-card .video-container{
+        min-width: 0px !important;
+        max-width: none !important;
+        width: 90% !important;
+        height: 420px;
+        transform: translate(5%,0);
+
+        display: flex;
+        justify-content: center;
+        
+    }
+    .app-card .video-container[class="img"]{
+        height: 335px !important;
+    }
+    
+    .app-card .right{
+        margin: 10px !important;
+        margin-left: 45px;
+        
+    display: flex;
+    flex-direction: column;
+
+    }
+    .app-card .right .title{
+        margin-left: 0px !important;
+        margin-top: 25px;
+
+    }
+    .app-card .right .description{
+        margin-left: 0px !important;
+        margin-top: 15px;
+
+    }
+    
+    .app-card .right .button{
+        position: relative !important;
+        max-width: none !important;
+        align-self: center;
+    }
+}
