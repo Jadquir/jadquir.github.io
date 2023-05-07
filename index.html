@@ -1,180 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style/main.css" />
+    <link rel="stylesheet" type="text/css" href="style/nav.css" />
+    <link rel="stylesheet" type="text/css" href="style/button.css" />
+    <link rel="stylesheet" type="text/css" href="style/common.css" />
     <meta name="description" content="Hi, my name is Emircan 'Jadquir' Gezer. I am a 19 years old person who is interested in programming and photoshop manipulations. I sometimes work freelance on Bionluk and Fiverr.">
-    <meta name="theme-color" content="#504ec6" />
-    <meta name="keywords" content="Emircan, jadquir, Gezer, United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Recognition Application, Shazam, ">
-    <link rel="icon" type="image/gif/png" href="icons/logo.png">
+    <meta name="theme-color" content="#2657ea">
+    <meta name="keywords" content="Emircan, jadquir, Gezer,Emircan Gezer, Jadquir,Emircan Jadquir Gezer, Applications, Free,United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Identifier, Music Recognition Application, Shazam, Photoshop, Artowrk, Photoshop Artwork,Freelance, Bionluk">
+    <link rel="icon" type="image/gif/png" href="images/logo.png">
     <title>Emircan 'Jadquir' Gezer</title>
-    <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
-    <script src="scripts/navbar.js" type="text/javascript"></script>
-    <script src="scripts/bg.js" type="text/javascript"></script>
+    <script src="scripts/navbar.js" defer></script>
+    <script src="scripts/text.js" defer></script>
+    <!-- <script src="scripts/gradient.js" defer></script> -->
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <header class="primary-header flex" id="navContainer">
+      <div class="holder1">
+        <a href="/" class="logo" ></a>
+        <button
+          class="nav-toggle no-button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <div id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <nav>
+        <ul
+          data-visible="false"
+          id="primary-navigation"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a href="#" class="nav"> Home </a>
+          </li>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" defer></script>
-    <script src="scripts/reveal.js" type="text/javascript" defer></script>    
+          <li>
+            <a href="#about" class="nav"> About Me </a>
+          </li>
 
-</head>
-<body onload="loadEvent()">
-    <nav class="navbar" id="navbar" onload="scrollBG()">
-        <div class="brand-title"><a href="index.html#">Jadquir</a></div>  
-        <a class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
-        <div class="navbar-links">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#myworks">My Works</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#works" class="nav"> My Works </a>
+          </li>
+
+          <li>
+            <a href="#contact" class="nav"> Contact </a>
+          </li>
         </ul>
-        </div>
-    </nav>
-    <div id="fixed" style="position: fixed; top: 0; left: 0; color: aliceblue;"></div>
-</div>
-
-        
-
-    <section id="summary" class="summary">
-        <div class="avatar">
-            <img src="./images/jadquir_avatar.png">
-        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="start">
         <div class="hiText">
-            Hi, my name is&nbsp;
-            <div class="subTitle" >
-                Emircan Gezer
-            </div>
+          Hi, my name is&nbsp;
+          <div class="subTitle">Emircan Gezer</div>
         </div>
-        
         <div class="imText">
-            <p class="hero-text">I'm
-                <span class="typed-text"></span><span class="cursor">|</span>
-            </p>
+          <p class="hero-text">
+            I'm <span class="typed-text" style="color: var(--accent-lighter);">a Freelancer</span
+            ><span class="cursor typing">|</span>
+          </p>
         </div>
-        <button><a href="#about">Learn More</a></button>
-       
-    </section>
+        <a href="#about" class="button primary">Learn More</a>
+        <!-- <div class="bg-image im1"></div> -->
+      </section>
+
+      <section class="about" id="about">
+        <div class="hero-image-container">
+
+          <div class="hero-image"></div>
+        </div>
+        <div class="about-text glass">
+          <span class="title">About Me</span>
+          <span class="text">
+            <b>Hi,</b> my name is Emircan 'Jadquir' Gezer. I am a student at
+            Ankara University. I am a 19 years old person who is interested in
+            programming and photoshop manipulations. I sometimes work freelance
+            on
+            <a
+              class="hover-effect"
+              href="https://bionluk.com/jadquir"
+              target="_blank"
+              style="color: #fd4056"
+              >Bionluk</a
+            >
+            and
+            <a
+              class="hover-effect"
+              href="https://www.fiverr.com/jadquir"
+              target="_blank"
+              style="color: #00bf7a"
+              >Fiverr</a
+            >. <br />And I make free desktop applications and photoshop
+            manipulation in my free time.
+          </span>
+          <a
+            href="#works"
+            style="margin-top: 25px; max-width: fit-content; padding: 10px 20px"
+            class="button no-glow transparent"
+            >See My Works</a
+          >
+        </div>
+      </section>
+      <section class="works" id="works">
+        <span class="title">My Works</span>
+        <div class="card-parent">
+          <a class="card" href="applications.html">
+            <div class="icon">
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <title></title>
+                <g data-name="Layer 40" id="Layer_40">
+                  <path
+                    class="cls-1"
+                    d="M28,24H4a3,3,0,0,1-3-3V5A3,3,0,0,1,4,2H28a3,3,0,0,1,3,3V21A3,3,0,0,1,28,24ZM4,4A1,1,0,0,0,3,5V21a1,1,0,0,0,1,1H28a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"
+                  ></path>
+                  <path
+                    class="cls-1"
+                    d="M21,30H11a1,1,0,0,1-1-1.16l1-6A1,1,0,0,1,12,22h8a1,1,0,0,1,1,.84l1,6A1,1,0,0,1,21,30Zm-8.82-2h7.64l-.67-4h-6.3Z"
+                  ></path>
+                  <path
+                    class="cls-1"
+                    d="M24,30H8a1,1,0,0,1,0-2H24a1,1,0,0,1,0,2Z"
+                  ></path>
+                  <path
+                    class="cls-1"
+                    d="M30,19H2a1,1,0,0,1,0-2H30a1,1,0,0,1,0,2Z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+
+            <span class="title">Desktop Applications</span>
+          </a>
+          <a class="card" href="artworks.html">
+            <div class="icon">
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <title />
+                <g id="Image">
+                  <path
+                    d="M25,2H7A5,5,0,0,0,2,7V25a5,5,0,0,0,5,5H25a5,5,0,0,0,5-5V7A5,5,0,0,0,25,2ZM7,4H25a3,3,0,0,1,3,3v5.59l-1.88-1.88a3,3,0,0,0-4.24,0l-7.95,8-3-2.42a3,3,0,0,0-3.8,0L4,18.86V7A3,3,0,0,1,7,4ZM25,28H7a3,3,0,0,1-3-3V21.47l4.38-3.66a1,1,0,0,1,1.27,0l3.73,3a1,1,0,0,0,1.33-.07l8.58-8.59a1,1,0,0,1,1.42,0L28,15.41V25A3,3,0,0,1,25,28Z"
+                  />
+                  <path
+                    d="M10,13a3,3,0,1,0-3-3A3,3,0,0,0,10,13Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,10,9Z"
+                  />
+                </g>
+              </svg>
+            </div>
+            <span class="title">Photoshop Manipulations</span>
+          </a>
+          <a class="card " href="games.html">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path
+                  d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 248c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40zm-24 56c0 22.1-17.9 40-40 40s-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"
+                />
+              </svg>
+            </div>
+
+            <span class="title">Games</span>
+          </a>
         
-    <script src="scripts/text2.js" type="text/javascript"></script>
-    <section id="about" class="about  reveal-up">
-        <div class="title">About Me</div>
-        <div class="text">
-            Hi, my name is Emircan 'Jadquir' Gezer. I study Mathematics at Ankara University.<br>
-            I am a 19 years old person who is interested in programming and photoshop manipulations. 
-            I sometimes work freelance on 
-            <a class="hover-effect" href="https://bionluk.com/jadquir" target="_blank" style="color: #fd4056;">Bionluk</a> and 
-            <a class="hover-effect" href="https://www.fiverr.com/jadquir" target="_blank" style="color: #00bf7a;">Fiverr</a>.
-            <br>And I make free desktop applications and photoshop manipulation in my free time.
         </div>
-    </section>
-    <section id="myworks" class="myworks">
-        <div class="title">My Works</div>
-        <div class="card-container reveal-up">
-           
-            <div class="card first-card">
-                <div class="icon ">
-                    <?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="Layer 40" id="Layer_40"><path class="cls-1" d="M28,24H4a3,3,0,0,1-3-3V5A3,3,0,0,1,4,2H28a3,3,0,0,1,3,3V21A3,3,0,0,1,28,24ZM4,4A1,1,0,0,0,3,5V21a1,1,0,0,0,1,1H28a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"/><path class="cls-1" d="M21,30H11a1,1,0,0,1-1-1.16l1-6A1,1,0,0,1,12,22h8a1,1,0,0,1,1,.84l1,6A1,1,0,0,1,21,30Zm-8.82-2h7.64l-.67-4h-6.3Z"/><path class="cls-1" d="M24,30H8a1,1,0,0,1,0-2H24a1,1,0,0,1,0,2Z"/><path class="cls-1" d="M30,19H2a1,1,0,0,1,0-2H30a1,1,0,0,1,0,2Z"/></g></svg></div>
-                <div class="title ">Desktop Applications</div>
-                <div class="text ">
-                    I create free to use and useful desktop. 
-                </div>
-                <button class=" "><a href="pages/applications.html">Learn More</a></button>
-            </div>
-            <div class="card use-margin">
-                <div class="icon "><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title/><g id="Image"><path d="M25,2H7A5,5,0,0,0,2,7V25a5,5,0,0,0,5,5H25a5,5,0,0,0,5-5V7A5,5,0,0,0,25,2ZM7,4H25a3,3,0,0,1,3,3v5.59l-1.88-1.88a3,3,0,0,0-4.24,0l-7.95,8-3-2.42a3,3,0,0,0-3.8,0L4,18.86V7A3,3,0,0,1,7,4ZM25,28H7a3,3,0,0,1-3-3V21.47l4.38-3.66a1,1,0,0,1,1.27,0l3.73,3a1,1,0,0,0,1.33-.07l8.58-8.59a1,1,0,0,1,1.42,0L28,15.41V25A3,3,0,0,1,25,28Z"/><path d="M10,13a3,3,0,1,0-3-3A3,3,0,0,0,10,13Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,10,9Z"/></g></svg></div>
-                <div class="title ">Photoshop Artworks</div>
-                <div class="text ">
-                    I sometimes create manipulations using Photoshop
-                </div>
-                <button class=" "><a href="pages/artworks.html">Learn More</a></button>
-            </div>
+      </section>
 
-            <div class="card use-margin">
-                <div class="icon "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 248c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40zm-24 56c0 22.1-17.9 40-40 40s-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"/></svg></div>
-                <div class="title ">Games</div>
-                <div class="text ">
-                    I sometimes join Game Jams (usually it is Magara Jam) and make games.
-                </div>
-                <button class=" "><a href="pages/games.html">Learn More</a></button>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="contact">
+      <section id="contact" class="contact">
         <div class="title">Contact</div>
-        <div class="contact-container reveal-up">
-            <div class="left">
-                <form action="https://formsubmit.co/jadquircontact@gmail.com" method="POST">
-                    <div class="textbox ">
-                        <div class="text">Name</div>
-                        <input type="text" name="name" placeholder="Example Name" required>
-                    </div>
-                    <div class="textbox ">
-                        <div class="text">Email</div>
-                        <input type="email" name="email" placeholder="example@domain.com" required>
-                    </div>
-                    <div class="textbox ">
-                        <div class="text">Message</div>
-                        <textarea type="text" name="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button class="submit" type="submit" name="submit">Send</button>
-                </form>
-            </div>
-            <div class="right">
-                <div class="title  ">Or you can reach the links down below</div>
-                <div class="social ">
-                    <div class="icon ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path></svg>
-                    </div>
-                    <a class="url" href="https://discord.com/invite/4RsEywFGQn"> Discord Server</a>
+        <div
+          class="contact-container reveal-up"
+          style="
+            opacity: 1;
+            visibility: inherit;
+            transform: translate(0px, 0px);
+          "
+        >
+          <div class="left section">
+            <form
+              action="https://formsubmit.co/jadquircontact@gmail.com"
+              method="POST"
+            >
+              <div class="textbox">
+                <div class="text">Name</div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Example Name"
+                  required=""
+                />
+              </div>
+              <div class="textbox">
+                <div class="text">Email</div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="example@domain.com"
+                  required=""
+                />
+              </div>
+              <div class="textbox">
+                <div class="text">Message</div>
+                <textarea
+                  type="text"
+                  name="message"
+                  placeholder="Your Message"
+                  required=""
+                ></textarea>
+              </div>
+              <button class="submit button accent" style="padding: 12px 40px;" type="submit" name="submit">
+                Send
+              </button>
+            </form>
+          </div>
+          <div class="right section">
+            <div class="title">Or you can reach the links down below</div>
+            <div class="socials">
+              <div class="social">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                    <path
+                      d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"
+                    ></path>
+                  </svg>
                 </div>
-                <div class="social ">
-                    <div class="icon ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
-                    </div>
-                    <a class="url" href="https://www.youtube.com/channel/UCfFGFB1flw00AiHw_4xYvPw?sub_confirmation=1"> Emircan Gezer</a>
+                <a class="url hover-effect" href="https://discord.com/invite/4RsEywFGQn">
+                  Discord Server</a
+                >
+              </div>
+              <div class="social">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                      d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+                    ></path>
+                  </svg>
                 </div>
-                
-                <div class="social ">
-                    <div class="icon ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"></path></svg>
-                    </div>
-                    <a class="url" href="mailto:jadquircontact@gmail.com"> jadquircontact@gmail.com</a>
-                </div>
-            </div>
-        </div>
-    </section>
+                <a
+                  class="url hover-effect"
+                  href="https://www.youtube.com/channel/UCfFGFB1flw00AiHw_4xYvPw?sub_confirmation=1"
+                >
+                  Emircan Gezer</a
+                >
+              </div>
 
+              <div class="social">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                      d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"
+                    ></path>
+                  </svg>
+                </div>
+                <a class="url hover-effect" href="mailto:jadquircontact@gmail.com">
+                  jadquircontact@gmail.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer>
-        This website is made by Jadquir. Copyright © 2022
-    </footer>
-<!--
-    <div class="bubble-container" >
-        <ul class="bubbles">   
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div >
--->
-</body>
+      This website is made by Jadquir. Copyright &copy; 2023. All rights reserved.
+  </footer>
+  </body>
 </html>
