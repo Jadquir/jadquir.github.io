@@ -64,6 +64,7 @@ section {
     flex-direction: column;
     justify-content: center;
 }
+
 .landing {
     display: flex;
     flex-direction: row;
@@ -117,9 +118,144 @@ section {
 
 
 
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: var(--accent-09);
+    backdrop-filter: blur(2px);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+}
+
+@media screen and (max-width: 1450px) {
+
+    .dialog-container {
+        width: 60% !important;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .dialog-container {
+        width: 80% !important;
+    }
+
+}
+
+.dialog.open {
+    display: flex;
+    opacity: 100;
+}
+
+.dialog.open .dialog-container {
+    animation: animatepopup 1s ease-in-out .8s;
+    -webkit-animation: animatepopup .3s ease-in-out forwards;
+}
+
+.dialog-container {
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 50%;
+    transform: translateY(-100px);
+    background-color: #121316a8;
+
+    transition: transform 0.3s ease;
+    border-radius: 25px;
+    padding: 15px;
+}
 
 
+@keyframes animatepopup {
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+
+}
+
+.dialog-container * {
+    color: var(--fg);
+    margin: 0;
+    text-align: center;
+}
+
+.dialog-container h2 {
+    font-size: 35px;
+    font-weight: 600;
+    margin: 15px 0;
+    margin-bottom: 40px;
+}
+
+.dialog-container span {
+    font-size: var(--size-4);
+}
+
+.dialog-container .text {
+    padding: 0px 25px;
+}
+
+
+.close-btn {
+    width: 35px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+
+    filter: drop-shadow(0px 0px 1px var(--bg));
+}
+
+.close-btn #hamburger {
+    width: 26px;
+}
+
+.close-btn .bar {
+    height: 4px;
+    background: var(--fg);
+}
+
+.close-btn .bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.close-btn .bar:nth-child(2) {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+.bmc-btn-container {
+    margin: 50px 0 0 0;
+    transition: all 0.1s ease;
+}
+
+.bmc-btn-container:hover {
+    cursor: pointer;
+    filter: brightness(70%);
+}
 
 
 
@@ -204,6 +340,7 @@ section.downloads .download-container {
     justify-content: flex-start;
     align-items: center;
 }
+
 .download-button .download-text {
     margin-right: 25px;
 

@@ -5,10 +5,12 @@
     --accent-09: rgba(38, 87, 234, 0.9);
 
     --accent-lighter: #537eff;
+    --accent-lighter-op2: #5e78f7db;
     --accent-lighter-op1: #5e78f712;
     --accent-darker: #1c45b5;
     --card-glow: 0px 0px 10px var(--accent);
-
+    --fg: #f3f3f5;
+    --bg: #121316;
 
     --size-1: 25px; 
     --size-2: 60px; 
