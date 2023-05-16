@@ -11,6 +11,7 @@
     --card-glow: 0px 0px 10px var(--accent);
     --fg: #f3f3f5;
     --bg: #121316;
+    --bg-lighter: hsl(225deg 10% 10%);
 
     --size-1: 25px; 
     --size-2: 60px; 
@@ -443,3 +444,26 @@ footer {
     color: #ffffff33;
     padding: 0px 10px;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--bg-lighter);
+    border-radius: 15px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-lighter);
+  }
