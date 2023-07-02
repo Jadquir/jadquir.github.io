@@ -3,84 +3,129 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  #main {
+}
+
+#main {
     display: flex;
     align-items: center;
     flex-direction: row;
-  }
-  
-  .music_image {
+    min-height: 0px !important;
+    width: fit-content !important;
+    background: #00000045;
+    border-radius: 25px;
+    padding: 25px 55px;
+}
+
+#bg-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(27px) brightness(0.9) grayscale(0.1);
+    z-index: -1;
+    opacity: .7;
+    padding: 39px 67px;
+    background-position: center;
+}
+
+.music_image {
     flex: 0 0 auto;
     margin-right: 5%;
     border-radius: 15px;
     width: 350px;
-  }
-  .detail-parent{
+}
+
+.detail-parent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  .details {
+}
+
+.details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-  }
-  
-  .title-parent {
+}
+
+.title-parent {
     font-size: 39px;
     color: var(--fg);
     font-weight: 600;
-  }
-  
-  .info-parent {
+}
+
+.info-parent {
     display: flex;
     align-items: center;
     margin: 0px 0px 0px 5px;
-  }
-  
-  .info-title {
+}
+
+.info-title {
     flex: 0 0 auto;
     min-width: 125px;
     color: var(--fg);
     font-size: inherit;
-  }
-  .info-text{    
+}
+
+.info-text {
     font-weight: 700;
     color: var(--fg);
-  }
+}
 
-  @media (max-width: 55em) {
+@media (max-width: 1060px) {
 
     #main {
         flex-direction: column;
-      }
+        margin-top: calc(50%);
+    }
 
-  
-      .music_image {
+    .detail-parent {
+        align-items: center;
+    }
+
+    .music_image {
         margin-right: 0%;
         margin-bottom: 25px;
-      }
-  }
-.buttons{
+    }
+
+    .buttons {
+        padding: 0px 0px 50px 0px !important;
+    }
+
+    .title-parent{
+        align-self: center;
+    }
+}
+
+.buttons {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
     gap: 15px;
+    padding: 0px 50px 0px 0px;
 }
-  .open-mra{
+
+.open-mra {
     display: flex;
     flex-direction: row;
     align-items: center;
 
-  }
-  .external-link-svg{
+}
+
+.open-mra span {
+    text-wrap: nowrap;
+
+}
+
+.external-link-svg {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
-  
-    .external-link-svg path{
+
+.external-link-svg path {
     stroke: var(--fg);
-  }
+}

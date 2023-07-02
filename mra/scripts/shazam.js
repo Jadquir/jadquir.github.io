@@ -1,19 +1,23 @@
 async function getObjectFromHttpGet(url) {
-  try {
-    console.log(url);
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error("HTTP request failed");
+    try {
+      const response = await fetch(url, {
+        mode: 'cors',
+        headers: {
+          'Origin': 'https://jadquir.xyz' // Replace with your desired origin
+        }
+      });
+  
+      if (!response.ok) {
+        throw new Error("HTTP request failed");
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error getObjectFromHttpGet:", error.message);
+      return null;
     }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error getObjectFromHttpGet:", error.message);
-    return null;
   }
-}
 
 async function get_itunes(id) {
   const url = `https://itunes.apple.com/lookup?id=${id}`;
@@ -162,6 +166,8 @@ function updateUI(music){
     const details = document.querySelector(".details");
   
     image.setAttribute("src", music.Images);
+
+    $("#bg-image").css("background-image",`url("${music.Images}")`);
   
     function create_info(title, value) {
       // Create the parent div element
