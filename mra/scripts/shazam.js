@@ -3,7 +3,7 @@ async function getObjectFromHttpGet(url) {
       const response = await fetch(url, {
         mode: 'cors',
         headers: {
-          'Origin': 'https://jadquir.xyz/' // Replace with your desired origin
+          'Origin': 'https://jadquir.xyz/',
         }
       });
   
@@ -18,59 +18,10 @@ async function getObjectFromHttpGet(url) {
       return null;
     }
   }
-
-async function get_itunes(id) {
-  const url = `https://itunes.apple.com/lookup?id=${id}`;
-  return getObjectFromHttpGet(url);
-}
-
-function get_shazam(id) {
-  const url = `https://amp.shazam.com/shazam/v3/en-US/US/android/-/track/${id}`;
-  return getObjectFromHttpGet(url);
-}
-
-function parse_itunes(data) {
-  const musicData = data.results[0]; // Assuming there's only one result
-  try {
-    const music = {
-      Title: musicData.trackName,
-      Artist: musicData.artistName,
-      Album: musicData.collectionName,
-      Genre: musicData.primaryGenreName,
-      ReleaseYear: new Date(musicData.releaseDate).getFullYear().toString(),
-      Images: musicData.artworkUrl100,
-      Id: musicData.trackId.toString(),
-    };
-    return music;
-  } catch (error) {}
-  return null;
-}
-
 async function get_music(id) {
-  const shazamPromise = get_shazam(id);
-  const itunesPromise = get_itunes(id);
-
+ 
   try {
-    const [shazamData, itunesData] = await Promise.all([
-      shazamPromise,
-      itunesPromise,
-    ]);
-    // Do something with itunesData and shazamData
-    console.log("iTunes Data:", itunesData);
-    console.log("Shazam Data:", shazamData);
-
-    const parsed_itunes = parse_itunes(itunesData);
-    console.log("parsed Itunes:", parsed_itunes);
-    const Music = {
-      Title: parsed_itunes.Title,
-      Artist: parsed_itunes.Artist,
-      Album: parsed_itunes.Album,
-      Genre: parsed_itunes.Genre,
-      ReleaseYear: parsed_itunes.ReleaseYear,
-      Images: parsed_itunes.Images,
-      Id: parsed_itunes.Id,
-    };
-    return Music;
+    return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -78,23 +29,35 @@ async function get_music(id) {
   return null;
 }
 
-function change(url, size) {
-  var modifiedUrl = url.replace(
-    /(\d+x\d+)(bb)?\.jpg/,
-    size + "x" + size + "bb.jpg"
-  );
-  return modifiedUrl;
-}
+function GetImagePath(MusicImageLink, newSize) {
+    if (!MusicImageLink) {
+      return '';
+    }
+    var orgLink = MusicImageLink;
+    var lastSlashIndex = orgLink.lastIndexOf('/');
+    var baseUrl = orgLink.substring(0, lastSlashIndex + 1);
+    var lastPart = orgLink.substring(lastSlashIndex + 1);
+    var size = '';
+    
+    for (var i = 0; i < lastPart.length; i++) {
+      if (!isNaN(parseInt(lastPart[i]))) {
+        size += lastPart[i];
+      } else {
+        break;
+      }
+    }
+    
+    var lowFileName = lastPart.replaceAll(size, newSize.toString());
+    return baseUrl + lowFileName;
+  }
 async function get_music_detail() {
   const urlParams = new URLSearchParams(window.location.search);
   const music_id = urlParams.get("id");
-  console.log(urlParams);
-  console.log(music_id);
   if (music_id === null || music_id.length === 0) {
     return null;
   }
   let music = await get_music(music_id);
-  music.Images = change(music.Images, 400);
+  music.Images = GetImagePath(music.Images, 400);
   return music;
 }
 
@@ -157,13 +120,14 @@ function setMetaTags(title, description, imageUrl) {
 
 function updateUI(music){
     const main = document.querySelector("#main");
-    console.log(music);
     if (music === null) {
       main.innerHTML = "<h1>Something went wrong!</h1>";
       return;
     }
     const image = document.querySelector(".music_image");
     const details = document.querySelector(".details");
+    const openmra = document.querySelector("#open-mra-href");
+    openmra.setAttribute("href",`mra://music/${music.Id}`)
   
     image.setAttribute("src", music.Images);
 
@@ -221,7 +185,6 @@ function updateUI(music){
 
 get_music_detail().then(function (result) {
   const music = result;
-
   if (music === null) {
     setMetaTags(
       "Something went wrong!",
@@ -238,7 +201,7 @@ get_music_detail().then(function (result) {
  // Check if the page has already loaded
  if (document.readyState === 'complete') {
     // If the page has loaded, update the UI immediately
-    (music);
+    updateUI(music);
   } else {
     // If the page is still loading, wait for it to finish
     $(document).ready(function() {
