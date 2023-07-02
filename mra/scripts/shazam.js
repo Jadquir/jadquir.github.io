@@ -3,7 +3,7 @@ async function getObjectFromHttpGet(url) {
       const response = await fetch(url, {
         mode: 'cors',
         headers: {
-          'Origin': 'https://jadquir.xyz' // Replace with your desired origin
+          'Origin': 'https://jadquir.xyz/' // Replace with your desired origin
         }
       });
   
