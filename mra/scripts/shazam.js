@@ -17,7 +17,8 @@ async function getObjectFromHttpGet(url) {
       console.error("Error getObjectFromHttpGet:", error.message);
       return null;
     }
-  }
+  }const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 async function get_music(id) {
  
   try {
@@ -57,6 +58,9 @@ async function get_music_detail() {
     return null;
   }
   let music = await get_music(music_id);
+  if(music === null){
+    return null
+  }
   music.Images = GetImagePath(music.Images, 400);
   return music;
 }
@@ -117,11 +121,16 @@ function setMetaTags(title, description, imageUrl) {
     document.head.appendChild(metaTag);
   });
 }
-
+function fade_out(){
+  const overlay = document.querySelector('.mra-overlay');
+  overlay.classList.add('closed');
+}
 function updateUI(music){
+    console.log(music);
     const main = document.querySelector("#main");
     if (music === null) {
       main.innerHTML = "<h1>Something went wrong!</h1>";
+      fade_out();
       return;
     }
     const image = document.querySelector(".music_image");
@@ -181,6 +190,8 @@ function updateUI(music){
     details.appendChild(create_info("Album", music.Album));
     details.appendChild(create_info("Genre", music.Genre));
     details.appendChild(create_info("Release Year", music.ReleaseYear));
+    
+    fade_out();
 }
 
 get_music_detail().then(function (result) {
