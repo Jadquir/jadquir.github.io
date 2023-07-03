@@ -22,7 +22,8 @@ async function getObjectFromHttpGet(url) {
 async function get_music(id) {
  
   try {
-    return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
+    return await getObjectFromHttpGet(`http://127.0.0.1:5001/mra-musicidentifier/us-central1/get_music?id=${id}`);
+    //return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
   } catch (error) {
     // Handle errors
     console.error(error);
@@ -138,9 +139,10 @@ function updateUI(music){
     const openmra = document.querySelector("#open-mra-href");
     openmra.setAttribute("href",`mra://music/${music.Id}`)
   
-    image.setAttribute("src", music.Images);
+    const image_src = (music === null || music.Images === null ||music.Images.length ===0) ? "./images/default.png" : music.Images;
+    image.setAttribute("src", image_src);
 
-    $("#bg-image").css("background-image",`url("${music.Images}")`);
+    $("#bg-image").css("background-image",`url("${image_src}")`);
   
     function create_info(title, value) {
       // Create the parent div element
@@ -162,7 +164,7 @@ function updateUI(music){
       textSpan.className = "info-text";
       textSpan.textContent = value;
   
-      if (value.length === 0) {
+      if (value == null || value.length === 0) {
         parentDiv.style.display = "none";
       }
       // Append the title and text spans to the parent div
