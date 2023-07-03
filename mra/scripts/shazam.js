@@ -22,8 +22,7 @@ async function getObjectFromHttpGet(url) {
 async function get_music(id) {
  
   try {
-    return await getObjectFromHttpGet(`http://127.0.0.1:5001/mra-musicidentifier/us-central1/get_music?id=${id}`);
-    //return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
+    return await getObjectFromHttpGet(`https://get-music-vh7xzcelwq-uc.a.run.app?id=${id}`);
   } catch (error) {
     // Handle errors
     console.error(error);
