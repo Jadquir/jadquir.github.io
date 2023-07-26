@@ -8,10 +8,17 @@
     <link rel="stylesheet" type="text/css" href="style/nav.css" />
     <link rel="stylesheet" type="text/css" href="style/button.css" />
     <link rel="stylesheet" type="text/css" href="style/common.css" />
-    <meta name="description" content="Hi, my name is Emircan 'Jadquir' Gezer. I am a 20 years old person who is interested in programming and photoshop manipulations. I sometimes work freelance on Bionluk and Fiverr.">
-    <meta name="theme-color" content="#2657ea">
-    <meta name="keywords" content="Emircan, jadquir, Gezer,Emircan Gezer, Jadquir,Emircan Jadquir Gezer, Applications, Free,United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Identifier, Music Recognition Application, Shazam, Photoshop, Artowrk, Photoshop Artwork,Freelance, Bionluk">
-    <link rel="icon" type="image/gif/png" href="images/logo.png">
+    <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <meta
+      name="description"
+      content="Hi, my name is Emircan 'Jadquir' Gezer. I am a 20 years old person who is interested in programming and photoshop manipulations. I sometimes work freelance on Bionluk and Fiverr."
+    />
+    <meta name="theme-color" content="#2657ea" />
+    <meta
+      name="keywords"
+      content="Emircan, jadquir, Gezer,Emircan Gezer, Jadquir,Emircan Jadquir Gezer, Applications, Free,United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Identifier, Music Recognition Application, Shazam, Photoshop, Artowrk, Photoshop Artwork,Freelance, Bionluk"
+    />
+    <link rel="icon" type="image/gif/png" href="images/logo.png" />
     <link itemprop="image" href="images/jadquir_avatar.png" />
     <title>Emircan 'Jadquir' Gezer</title>
     <script src="scripts/navbar.js" defer></script>
@@ -25,7 +32,7 @@
   <body>
     <header class="primary-header flex" id="navContainer">
       <div class="holder1">
-        <a href="/" class="logo" ></a>
+        <a href="/" class="logo"></a>
         <button
           class="nav-toggle no-button"
           aria-controls="primary-navigation"
@@ -71,7 +78,9 @@
         </div>
         <div class="imText">
           <p class="hero-text">
-            I'm <span class="typed-text" style="color: var(--accent-lighter);">a Freelancer</span
+            I'm
+            <span class="typed-text" style="color: var(--accent-lighter)"
+              >a Freelancer</span
             ><span class="cursor typing">|</span>
           </p>
         </div>
@@ -81,7 +90,6 @@
 
       <section class="about" id="about">
         <div class="hero-image-container">
-
           <div class="hero-image"></div>
         </div>
         <div class="about-text glass">
@@ -119,6 +127,67 @@
       <section class="works" id="works">
         <span class="title">My Works</span>
         <div class="card-parent">
+          <!-- <div class="info-card">
+            <div class="image-parent">
+              <button class="image-control before-button no-button">></button>
+              <div class="images">
+                <img
+                  src="https://img.itch.zone/aW1hZ2UvMjE2MDUzNS8xMjc1MjM0My5wbmc=/original/BgtkSN.png"
+                />
+                <img
+                  src="https://img.itch.zone/aW1hZ2UvMjE2MDUzNS8xMjc1MjQxMS5wbmc=/original/4pHc22.png"
+                />
+                <img
+                  src="https://img.itch.zone/aW1hZ2UvMjE2MDUzNS8xMjc1MjI2Mi5wbmc=/original/Q9HFud.png"
+                />
+                <img
+                  src="https://img.itch.zone/aW1hZ2UvMjE2MDUzNS8xMjc1MjQ1NS5wbmc=/original/gvFhp1.png"
+                />
+              </div>
+              <button class="image-control after-button no-button">></button>
+            </div>
+           
+            <div class="details">
+              <div class="text">
+                <span class="title">AstroStrike</span>
+                <span>Astrosrike si a game I made in 48 hours</span>
+              </div>
+              <div class="buttons">
+                <a class="card-url" href="">Open in Itch.io</a>
+              </div>
+            </div>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const images = document.querySelectorAll(".images img");
+                const beforeButton = document.querySelector(".before-button");
+                const afterButton = document.querySelector(".after-button");
+                let currentIndex = 0;
+
+                function showImage(index) {
+                  images.forEach(function (image, i) {
+                    if (i === index) {
+                      image.classList.add("active");
+                    } else {
+                      image.classList.remove("active");
+                    }
+                  });
+                }
+
+                beforeButton.addEventListener("click", function () {
+                  currentIndex =
+                    (currentIndex - 1 + images.length) % images.length;
+                  showImage(currentIndex);
+                });
+
+                afterButton.addEventListener("click", function () {
+                  currentIndex = (currentIndex + 1) % images.length;
+                  showImage(currentIndex);
+                });
+
+                showImage(currentIndex);
+              });
+            </script>
+          </div> -->
           <a class="card" href="applications.html">
             <div class="icon">
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +231,7 @@
             </div>
             <span class="title">Photoshop Manipulations</span>
           </a>
-          <a class="card " href="games.html">
+          <a class="card" href="games.html">
             <div class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                 <path
@@ -173,7 +242,6 @@
 
             <span class="title">Games</span>
           </a>
-        
         </div>
       </section>
 
@@ -219,7 +287,12 @@
                   required=""
                 ></textarea>
               </div>
-              <button class="submit button accent" style="padding: 12px 40px;" type="submit" name="submit">
+              <button
+                class="submit button accent"
+                style="padding: 12px 40px"
+                type="submit"
+                name="submit"
+              >
                 Send
               </button>
             </form>
@@ -235,7 +308,10 @@
                     ></path>
                   </svg>
                 </div>
-                <a class="url hover-effect" href="https://discord.com/invite/4RsEywFGQn">
+                <a
+                  class="url hover-effect"
+                  href="https://discord.com/invite/4RsEywFGQn"
+                >
                   Discord Server</a
                 >
               </div>
@@ -263,7 +339,10 @@
                     ></path>
                   </svg>
                 </div>
-                <a class="url hover-effect" href="mailto:jadquircontact@gmail.com">
+                <a
+                  class="url hover-effect"
+                  href="mailto:jadquircontact@gmail.com"
+                >
                   jadquircontact@gmail.com</a
                 >
               </div>
@@ -271,11 +350,22 @@
           </div>
         </div>
       </section>
-      <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="Jadquir" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-  
+      <script
+        data-name="BMC-Widget"
+        data-cfasync="false"
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="Jadquir"
+        data-description="Support me on Buy me a coffee!"
+        data-message=""
+        data-color="#5F7FFF"
+        data-position="Right"
+        data-x_margin="18"
+        data-y_margin="18"
+      ></script>
     </main>
     <footer>
-      This website is made by Jadquir. Copyright &copy; 2023. All rights reserved.
-  </footer>
+      This website is made by Jadquir. Copyright &copy; 2023. All rights
+      reserved.
+    </footer>
   </body>
 </html>
