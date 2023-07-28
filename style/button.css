@@ -20,7 +20,7 @@ button:not(.no-button) {
 .button:hover,
 button:not(.no-button):hover {
     cursor: pointer;
-    -webkit-box-shadow:0px 0px 22px 0px var(--accent-09);
+    -webkit-box-shadow: 0px 0px 22px 0px var(--accent-09);
     -moz-box-shadow: 0px 0px 22px 0px var(--accent-09);
     box-shadow: 0px 0px 22px 0px var(--accent-09),
         0px 0px 100px 0px var(--accent-09);
@@ -28,7 +28,7 @@ button:not(.no-button):hover {
 
 .button.no-glow:hover,
 button:not(.no-button).no-glow:hover {
-    -webkit-box-shadow:none;
+    -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
@@ -58,12 +58,14 @@ button:not(.no-button).secondary,
 .button.secondary {
     border: 3px solid var(--accent) !important;
 }
+
 button:not(.no-button).secondary:hover,
-.button.secondary:hover{
+.button.secondary:hover {
     background-color: var(--accent) !important;
 }
+
 button:not(.no-button).secondary:active,
-.button.secondary:active{
+.button.secondary:active {
     background-color: var(--accent) !important;
 }
 
@@ -74,7 +76,7 @@ button:not(.no-button).transparent,
     background-color: transparent !important;
     color: var(--accent-lighter) !important;
     box-shadow: none;
-    backdrop-filter: none;    
+    backdrop-filter: none;
     outline: solid 2px var(--accent-lighter);
     outline-offset: -2px;
 }
@@ -89,11 +91,66 @@ button:not(.no-button).transparent:hover,
 
 
 .button.primary,
-button:not(.no-button).primary{
+button:not(.no-button).primary {
     background-color: var(--accent);
     color: #fff;
-}   
+}
+
 .button.primary:hover,
-button:not(.no-button).primary:hover{
+button:not(.no-button).primary:hover {
     background-color: var(--accent);
-}   
+}
+
+
+
+
+.icon-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    justify-content: center;
+}
+
+.icon-button span {
+
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.icon-button svg {
+    --w: 35px;
+    width: var(--w);
+    height: var(--w);
+    fill: aliceblue;
+    margin-right: 15px;
+}
+
+.icon-button.filled {
+    fill: aliceblue;
+}
+
+.icon-button.filled svg {
+    fill: aliceblue;
+}
+
+.icon-button.filled svg g {
+    fill: aliceblue;
+}
+
+.icon-button.stroked {
+    stroke: aliceblue;
+}
+
+.icon-button.stroked svg {
+    stroke: aliceblue;
+}
+
+.icon-button.stroked svg g {
+    stroke: aliceblue;
+}
+@media  (max-width: 1300px) {
+    .icon-button{
+        width: auto;
+    }
+}

@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 60px;
 }.app-card {
     display: flex;
     flex-direction: row;
@@ -32,7 +33,7 @@
 }.app-card .right .description {
     margin-top: 15px;
     margin-bottom: 70px;
-}.app-card .right .button {
+}.app-card .right .app-buttons {
     position: absolute;
     bottom: 0px;
 }.app-card .video-container iframe ,
@@ -55,7 +56,10 @@
     margin-bottom: 50px;
 }
 
-
+.app-card-container.nomargin{
+    margin-top: 0px  !important;
+    margin-bottom: 0px !important;
+}
 
 @media  (max-width: 1300px) {
     
@@ -79,7 +83,7 @@
     }
     
     .app-card .right{
-        margin: 10px !important;
+        margin: 0px  30px !important;
         margin-left: 45px;
         
     display: flex;
@@ -96,10 +100,21 @@
         margin-top: 15px;
 
     }
-    
-    .app-card .right .button{
+    .app-card .right .app-buttons{
         position: relative !important;
         max-width: none !important;
         align-self: center;
+        flex-direction: column;
+
+        width: 100%;
+    }.app-card-container {
+        margin-top: 00px;
+        margin-bottom: 00px;
     }
+}
+.app-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
 }

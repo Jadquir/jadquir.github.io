@@ -122,6 +122,11 @@ section {
     background-size: contain;
 }
 
+@media (prefers-color-scheme: light) {    
+    .logo {
+    background: url(../images/logo_dark.png) !important;
+}
+}
 .primary-header {
     top: 0;
     height: 60px;

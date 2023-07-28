@@ -279,7 +279,7 @@ textarea:focus {
 @media (max-width: 55em) {
     .contact-container {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
     }
 
     .contact-container .right {
@@ -366,6 +366,7 @@ textarea {
     column-gap: 7%;
     row-gap: 5vh;
     align-items: center;
+    margin-bottom: 20vh;
 }
 
 .card {
@@ -470,6 +471,7 @@ textarea {
 
     .card-parent {
         flex-direction: column;
+        margin-bottom: 0;
     }
 }
 
@@ -491,9 +493,16 @@ section.about .hero-image {
     background-position: center center;
 
     border-radius: 100%;
-    /* animation: rotate 2s infinite alternate ease-in-out; */
+    animation: blob 2s infinite alternate ease-in-out;
 }
-
+@keyframes blob {
+    0% {
+        border-radius: 100% 92% 85% 100%;
+    }
+    100% {
+        border-radius: 92% 100% 100% 90%;
+    }
+}
 .hero-image-container {
     display: flex;
     animation: rotate 2s infinite alternate ease-in-out;
@@ -582,13 +591,15 @@ section.about .about-text .text {
     }
 
     section.about .about-text {
-        width: auto;
+        width: calc(90% - 90px);
         padding: 45px;
         display: flex;
         flex-direction: column;
 
     }
-
-
-
+    .submit.button{
+        
+    min-width: 89%;
+        justify-self: center;
+    }
 }
