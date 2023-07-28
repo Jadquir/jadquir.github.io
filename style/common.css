@@ -113,7 +113,7 @@ section {
     height: 50px;
     margin: 5px 0px;
     
-    background: url(../images/logo.png);
+    background-image: url(../images/logo.png);
     
     aspect-ratio: 1;
     border: none;
@@ -124,7 +124,7 @@ section {
 
 @media (prefers-color-scheme: light) {    
     .logo {
-    background: url(../images/logo_dark.png) !important;
+    background-image: url(../images/logo_dark.png) !important;
 }
 }
 .primary-header {
