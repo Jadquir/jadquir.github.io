@@ -487,7 +487,7 @@ section.about .hero-image {
     height: 500px;
     overflow: hidden;
     position: relative;
-    background: url("../images/jadquir_avatar.png");
+    background-image: url("../images/jadquir_avatar.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -505,9 +505,11 @@ section.about .hero-image {
 }
 .hero-image-container {
     display: flex;
-    animation: rotate 2s infinite alternate ease-in-out;
+    animation: rotate 2s infinite alternate ease-in-out, blob 2s infinite alternate ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
-
 @keyframes rotate {
     from {
         transform: rotate(-2deg);
