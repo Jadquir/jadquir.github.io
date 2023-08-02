@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="../style/button.css" />
+    <link rel="stylesheet" type="text/css" href="../style/common.css" />
+    <script src="../scripts/navbar.js" type="text/javascript" defer></script>
+    <script src="./editor/image_base.js" type="text/javascript"></script>
+    <script src="./editor/user_image.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript" defer></script>
+    <script src="js/tabs.js" type="text/javascript" defer></script>
+    <!-- <meta http-equiv="Refresh" content="0; url='https://www.jadquir.com'" /> -->
+
+    <title>Adobe Splash Screen Creator by Jadquir</title>
+    <link itemprop="image" href="../images/logo.png" />
+    <meta property="og:url" content="https://www.jadquir.com/sscreator" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Adobe Splash Screen Creator by Jadquir"
+    />
+    <meta
+      property="og:title"
+      content="Adobe Splash Screen Creator by Jadquir"
+    />
+    <meta property="og:image" content="../images/logo_low.png" />
+    <meta property="og:image:width" content="150" />
+    <meta property="og:image:height" content="150" />
+    <link rel="canonical" href="https://jadquir.com/sscreator" />
+    <meta
+      name="description"
+      content="Splash Screen Creator for Most Used Adobe Applications like Photoshop,After Effects etc. that can be used for changing splash screen of that application with United Adobe Editor"
+    />
+    <meta name="theme-color" content="#2657ea" />
+    <meta
+      name="keywords"
+      content="
+      Adobe,  splash screen, splash screen creatorPhotoshop, Illustrator, After Effects,Premiere Pro,Media Encoder,
+      Animate,
+      Audition,
+      Lightroom,
+      Lightroom Classic,
+      InDesign,
+      Dreamweaver,
+      InCopy,
+      CharacterAnimator,
+      United Adobe Editor,
+      MRA, 
+      Music Identifier, 
+      Music Recognition,
+      Music Recognition Application, 
+      Shazam, 
+      Shazam client for PC,
+      mra music,
+      music recognition api,
+      music downloders,
+      mra - music identifier - music discovery,
+      mra - music identifier,
+      mra - music discovery,
+      Music identification software,
+      Audio recognition app,
+      PC music search tool,
+      Song recognition for desktop,
+      Music discovery application,
+      Desktop audio identification,
+      Microphone-based music search,
+      PC app for identifying songs,
+      Sound recognition software,
+      Free, 
+      Emircan,
+      jadquir,
+      Gezer,
+      Emircan Gezer, 
+      Jadquir,
+      Emircan Jadquir Gezer,
+       Applications, 
+       United Adobe Editor, 
+       Photoshop Splash Screen Changer, 
+       Photoshop, Artowrk, Photoshop Artwork,Freelance, Bionluk"
+    />
+    <link
+      itemprop="image"
+      href="https://www.jadquir.com/images/jadquir_avatar_2.png"
+    />  <link rel="icon" type="image/gif/png" href="../images/logo.png" />
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <header class="primary-header flex" id="navContainer">
+      <div class="holder1">
+        <a href="../" class="logo"></a>
+        <button
+          class="nav-toggle no-button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <div id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <nav>
+        <ul
+          data-visible="false"
+          id="primary-navigation"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a href="../"> Home </a>
+          </li>
+
+          <li>
+            <a href="../#about"> About Me </a>
+          </li>
+
+          <li>
+            <a href="../#works"> My Works </a>
+          </li>
+
+          <li>
+            <a href="../#contact"> Contact </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="canvas-main-container disable-on-mobile">
+      <main>
+        <div id="canvas-container">
+          <canvas id="canvas" width="500" height="500"></canvas>
+        </div>
+        <div id="settings">
+          <div class="tabs content-holder">
+            <div class="tab-holder">
+              <div class="tab">
+                <button class="title no-button" onclick="showTabContent(0)">
+                  Upload File
+                </button>
+              </div>
+              <div class="tab">
+                <button class="title no-button" onclick="showTabContent(1)">
+                  Image URL
+                </button>
+              </div>
+            </div>
+            <div class="content">
+              <form onsubmit="handleImageUpload(event)">
+                <label for="fileInput">Select Image to Upload:</label>
+                <input type="file" id="fileInput" name="fileInput" />
+                <button type="submit" class="no-button photo-button">
+                  Upload
+                </button>
+              </form>
+              <form onsubmit="handleImageUrl(event)">
+                <label for="imageUrl">Enter Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl" />
+                <button type="submit" class="no-button photo-button">
+                  Upload
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="positions content-holder">
+            <span class="title">Image Position</span>
+            <div class="pos pos_x">
+              <label for="user_x">X: </label
+              ><input type="number" id="user_x" value="0" />
+            </div>
+            <div class="pos pos_y">
+              <label for="user_y">Y: </label
+              ><input type="number" id="user_y" value="0" />
+            </div>
+            <button class="no-button photo-button" onclick="resetPositions()">
+              Reset Positions
+            </button>
+          </div>
+          <div class="content-holder app_select">
+            <span class="title">Adobe App</span>
+            <select name="app" id="app_select">
+              <option value="photoshop">Photoshop</option>
+              <option value="premiere">Premiere Pro</option>
+            </select>
+
+            <div class="checkbox-container">
+              <input
+                type="checkbox"
+                id="is_setToDefaultActive"
+                name="checkbox"
+                value="1"
+                checked
+              />
+              <label for="is_setToDefaultActive">
+                Reset Colors After Changing App</label
+              >
+            </div>
+          </div>
+          <div class="colors content-holder">
+            <div class="color-row">
+              <div class="color-label">Background Color:</div>
+              <input type="color" class="color-picker" id="color1" />
+              <div class="color-text" id="color1Text">#000000</div>
+            </div>
+            <div class="color-row">
+              <div class="color-label">App Logo Inside Color:</div>
+              <input type="color" class="color-picker" id="color4" />
+              <div class="color-text" id="color4Text">#000000</div>
+            </div>
+
+            <div class="color-row">
+              <div class="color-label">App Logo Outside Color:</div>
+              <input type="color" class="color-picker" id="color5" />
+              <div class="color-text" id="color5Text">#000000</div>
+            </div>
+            <div class="color-row">
+              <div class="color-label">App Name Color:</div>
+              <input type="color" class="color-picker" id="color2" />
+              <div class="color-text" id="color2Text">#000000</div>
+            </div>
+
+            <div class="color-row">
+              <div class="color-label">Creative Cloud Text Color:</div>
+              <input type="color" class="color-picker" id="color3" />
+              <div class="color-text" id="color3Text">#000000</div>
+            </div>
+          </div>
+          <div class="downloads content-holder">
+            <button
+              id="download-button-config"
+              class="accent primary photo-button"
+            >
+              Download UAE Config
+            </button>
+            <button id="download-button" class="no-button photo-button">
+              Download Splash Screen
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <main class="mobile">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+          width="800px"
+          height="800px"
+          viewBox="-0.5 0 32 32"
+          version="1.1"
+        >
+          <defs></defs>
+          <g
+            id="Page-1"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+            sketch:type="MSPage"
+          >
+            <g
+              id="Icon-Set"
+              sketch:type="MSLayerGroup"
+              transform="translate(-568.000000, -463.000000)"
+              fill="#000000"
+            >
+              <path
+                d="M597,481 L570,481 L570,467 C570,465.896 570.896,465 572,465 L595,465 C596.104,465 597,465.896 597,467 L597,481 L597,481 Z M597,485 C597,486.104 596.104,487 595,487 L572,487 C570.896,487 570,486.104 570,485 L570,483 L597,483 L597,485 L597,485 Z M582,489 L586,489 L586,493 L582,493 L582,489 Z M595,463 L572,463 C569.791,463 568,464.791 568,467 L568,485 C568,487.209 569.791,489 572,489 L580,489 L580,493 L578,493 C577.447,493 577,493.448 577,494 C577,494.553 577.447,495 578,495 L590,495 C590.553,495 591,494.553 591,494 C591,493.448 590.553,493 590,493 L588,493 L588,489 L595,489 C597.209,489 599,487.209 599,485 L599,467 C599,464.791 597.209,463 595,463 L595,463 Z"
+                id="desktop"
+                sketch:type="MSShapeGroup"
+              ></path>
+            </g>
+          </g>
+        </svg>
+        <span>For the best results, use a desktop device!</span>
+      </main>
+    </section>
+    <div class="bottom-uae" id="download">
+      <h1>United Adobe Editor</h1>
+      <span
+        >Don't you know how to change your Adobe Applications' splash screens?
+        You can download <b>United Adobe Editor</b></span
+      >
+      <div class="uae-buttons">
+        <a
+          target="_blank"
+          class="button accent no-glow icon-button stroked"
+          href="https://jadquir.itch.io/united-adobe-editor"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="800px"
+            style="--w: 30px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M17 12L12 17M12 17L7 12M12 17V4M17 20H7"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>Download</span>
+        </a>
+        <a
+          target="_blank"
+          class="button accent no-glow icon-button filled"
+          href="https://github.com/Jadquir/UnitedAdobeEditor"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="800px"
+            height="800px"
+            viewBox="0 0 24 24"
+            fill="none"
+            style="--w: 28px"
+          >
+            <path
+              d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z"
+            />
+            <path
+              d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z"
+            />
+          </svg>
+          <span>Github</span>
+        </a>
+      </div>
+    </div>
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="Jadquir"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#5F7FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
+    <footer>
+      This website is made by Jadquir. Copyright &copy; 2023. All rights
+      reserved.
+    </footer>
+  </body>
+</html>
