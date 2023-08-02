@@ -297,12 +297,12 @@ svg g path {
     display: flex;
   }
 
-  .disable-on-mobile {
-    display: none;
+  .disableonmobile,
+  .bottom-uae {
+    display: none !important;
   }
 
 }
-
 .downloads {
 
   padding: 10px 10px;
