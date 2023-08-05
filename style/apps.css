@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: left;
     margin-bottom: 50px;
-    width: 1300px;
+    width: 75rem;
     padding: 25px;
     border-radius: 13px;
     background-color: var(--card-bg);
