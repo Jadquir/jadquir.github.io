@@ -283,7 +283,14 @@ svg g path {
   width: var(--w);
   height: var(--w);
 }
-
+@media (prefers-color-scheme: light) {
+  
+svg,
+svg g,
+svg g path {
+  fill: #212125;
+}
+}
 @media (max-width: 55em) {
   main {
     display: none;

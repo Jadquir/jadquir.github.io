@@ -2,6 +2,46 @@ const canvas = document.getElementById("canvas");
 canvas.width = 1500;
 canvas.height = 1000;
 const ctx = canvas.getContext("2d");
+// let isMouseDown = false;
+// let initialX = 0;
+// let initialY = 0;
+// const handleDimensionChangeUpdate = debounce(handle_diemnsionChange, 30);
+
+// canvas.addEventListener("mouseleave", (e) => {
+//   isMouseDown = false;
+// });
+
+// canvas.addEventListener("mousedown", (e) => {
+//   isMouseDown = true;
+//   initialX = e.clientX;
+//   initialY = e.clientY;
+// });
+
+// canvas.addEventListener("mousemove", (e) => {
+//   if (isMouseDown) {
+//     const latestX = e.clientX;
+//     const latestY = e.clientY;
+
+//     const deltaX = latestX - initialX;
+//     const deltaY = latestY - initialY;
+
+//     if (!user_img.isPortrait) {
+//       // Parsing user_x.value to a float
+//       var parsedXValue = parseFloat(user_img.user_x);
+
+//       user_x.value = parsedXValue +parseFloat( deltaX.toFixed(1));
+//     } else {
+//       // Parsing user_y.value to a float
+//       var parsedYValue = parseFloat(user_img.user_y);
+//       user_y.value = parsedYValue + parseFloat(deltaY.toFixed(1));
+//     }
+//     handleDimensionChangeUpdate()
+//   }
+// });
+
+// canvas.addEventListener("mouseup", () => {
+//   isMouseDown = false;
+// });
 
 const user_x = document.getElementById("user_x");
 const user_y = document.getElementById("user_y");
@@ -10,19 +50,21 @@ user_y.value = "469";
 
 let firstRender = false;
 let firstDownload = true;
-function afterDownload(){
-  if(firstDownload === false){
-return;
+function afterDownload() {
+  if (firstDownload === false) {
+    return;
   }
-   // Calculate the target element's position relative to the viewport
-   const targetElementRect = document.getElementById("download").getBoundingClientRect();
-        
-   // Scroll to the target element's top position with a smooth animation
-   window.scrollTo({
-       top: window.scrollY + targetElementRect.top,
-       behavior: "smooth"
-   });
-   firstDownload = false;
+  // Calculate the target element's position relative to the viewport
+  const targetElementRect = document
+    .getElementById("download")
+    .getBoundingClientRect();
+
+  // Scroll to the target element's top position with a smooth animation
+  window.scrollTo({
+    top: window.scrollY + targetElementRect.top,
+    behavior: "smooth",
+  });
+  firstDownload = false;
 }
 // downnloadign
 document
@@ -130,32 +172,31 @@ function handleImageUpload(event) {
     handleUpload();
   });
 }
-function chnageState(element,allowed){
-  if(allowed){
-    if(!element.classList.contains("active")){
-      element.classList.add("active")
+function chnageState(element, allowed) {
+  if (allowed) {
+    if (!element.classList.contains("active")) {
+      element.classList.add("active");
     }
-  }
-  else{
-    if(element.classList.contains("active")){
-      element.classList.remove("active")
+  } else {
+    if (element.classList.contains("active")) {
+      element.classList.remove("active");
     }
   }
 }
-function handlePositionUI(allowed_X,allowed_Y){
+function handlePositionUI(allowed_X, allowed_Y) {
   const posx = document.querySelector(".pos_x");
-  const posy= document.querySelector(".pos_y");
+  const posy = document.querySelector(".pos_y");
   console.log(posx);
   console.log(posy);
-  chnageState(posx,allowed_X);
-  chnageState(posy,allowed_Y);
+  chnageState(posx, allowed_X);
+  chnageState(posy, allowed_Y);
 }
 function resetPositions() {
-  user_img.assignNewDimension();  
+  user_img.assignNewDimension();
   user_x.value = user_img.user_x;
   user_y.value = user_img.user_y;
   var isPortrait = user_img.isPortrait();
-  handlePositionUI(isPortrait,!isPortrait)
+  handlePositionUI(isPortrait, !isPortrait);
 
   handle_diemnsionChange();
 }
