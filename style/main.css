@@ -309,6 +309,8 @@ textarea:focus {
     margin: 25px 0px;
 }
 
+
+
 .contact-container .left form .textbox input,
 .contact-container .left form .textbox textarea {
     background-color: #212125;
@@ -604,4 +606,13 @@ section.about .about-text .text {
     min-width: 89%;
         justify-self: center;
     }
+}
+
+
+.send-icon{
+    width: 35px;
+    height: 35px;
+    fill: none !important;
+}.send-icon path{
+    stroke: aliceblue;
 }
