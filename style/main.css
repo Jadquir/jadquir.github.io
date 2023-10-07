@@ -489,7 +489,7 @@ section.about .hero-image {
     height: 500px;
     overflow: hidden;
     position: relative;
-    background-image: url("../images/jadquir_avatar.png");
+    background-image:  url("../images/jadquir_avatar_20.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -497,6 +497,8 @@ section.about .hero-image {
     border-radius: 100%;
     animation: blob 2s infinite alternate ease-in-out;
 }
+
+
 @keyframes blob {
     0% {
         border-radius: 100% 92% 85% 100%;
