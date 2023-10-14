@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: left;
     margin-bottom: 50px;
-    width: 75rem;
+    width: min(75vw,75rem);
     padding: 25px;
     border-radius: 13px;
     background-color: var(--card-bg);
@@ -44,6 +44,7 @@
     box-shadow: var(--card-glow);
     -webkit-box-shadow: var(--card-glow);
     object-fit: cover;
+    background: #121316;
 }
 .separator{
     width: 50%;

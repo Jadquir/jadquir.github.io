@@ -274,6 +274,11 @@ a:not(.button):not(.card):hover {
     width: 70%;  */
 }
 @media (prefers-color-scheme: light) {
+    .primary-header.open .logo {
+        background-image: url(../images/logo.png) !important;
+        /* transform: scaleX(1);   
+        width: 70%;  */
+    }
     a:not(.button):not(.card):not(.nav) {
         color: #121316;
         /* transform: scaleX(1);   
