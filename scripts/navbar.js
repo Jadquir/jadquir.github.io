@@ -12,7 +12,8 @@ toggleButton.addEventListener("click",()=>{
     header.setAttribute("data-visible",newVal);
     toggleButton.setAttribute("aria-expanded",newVal);
 });
-window.addEventListener('scroll', function() {
+
+function checkScroll(){
   var scrollPosition = window.scrollY;
   var container = document.querySelector('#navContainer');
   if (container) {
@@ -22,8 +23,9 @@ window.addEventListener('scroll', function() {
       container.classList.remove('open');
     }
   }
- 
-});
+}
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('load', checkScroll);
 // const circle = document.querySelector('.circle');
 // const downloadBtn = document.querySelector('.download-btn');
 // downloadBtn.addEventListener('click', () => {
