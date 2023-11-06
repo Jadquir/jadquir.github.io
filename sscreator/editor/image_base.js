@@ -29,16 +29,17 @@
   }
   set_src(src) {
     this.image = new Image();
+    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
     this.image.src = src;
   }  
   set_url(imageURL) {
+    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
     this.imageURL = imageURL;
   }
   async init() {
     return new Promise((resolve, reject) => {
       this.image.onload = () => {
         const c = document.createElement("canvas");
-
         c.width = this.image.naturalWidth;
         c.height = this.image.naturalHeight;
         this.canvas = c;

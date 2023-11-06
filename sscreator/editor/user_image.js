@@ -3,6 +3,7 @@ const cornerRadius = 20;
 class UserImage extends ImageBase {
   initlizeImage(image) {
     this.userimg = new Image();
+    this.userimg.crossOrigin = 'anonymous'
     this.userimg.src = image;
   }
   set_dimensions(x, y, width, height) {
@@ -115,6 +116,7 @@ isPortrait(){
       this.userimg.onerror = () => {
         reject(new Error(`Failed to load image from URL: ${this.imageURL}`));
       };
+      this.userimg.crossOrigin = 'anonymous'
       this.userimg.src = this.imageURL;
     });
   }
