@@ -1,18 +1,20 @@
-const toggleButton = document.querySelector(".nav-toggle");
-const navBar =  document.querySelector(".primary-navigation");
-const menuIcon =  document.querySelector("#hamburger");
-const header =  document.querySelector(".primary-header");
 
-toggleButton.addEventListener("click",()=>{
-    const isVisible = navBar.getAttribute("data-visible");
-    const newVal = isVisible === "false" ?  "true" : "false";
-
-    menuIcon.className = isVisible === "false" ?  "animate" : "";
-    navBar.setAttribute("data-visible",newVal);
-    header.setAttribute("data-visible",newVal);
-    toggleButton.setAttribute("aria-expanded",newVal);
-});
-
+function onloadWindow(){
+  const toggleButton = document.querySelector(".nav-toggle");
+  const navBar =  document.querySelector(".primary-navigation");
+  const menuIcon =  document.querySelector("#hamburger");
+  const header =  document.querySelector(".primary-header");
+  
+  toggleButton.addEventListener("click",()=>{
+      const isVisible = navBar.getAttribute("data-visible");
+      const newVal = isVisible === "false" ?  "true" : "false";
+  
+      menuIcon.className = isVisible === "false" ?  "animate" : "";
+      navBar.setAttribute("data-visible",newVal);
+      header.setAttribute("data-visible",newVal);
+      toggleButton.setAttribute("aria-expanded",newVal);
+  });
+}  
 function checkScroll(){
   var scrollPosition = window.scrollY;
   var container = document.querySelector('#navContainer');
@@ -24,8 +26,9 @@ function checkScroll(){
     }
   }
 }
+
 window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', checkScroll);
+window.addEventListener('load', onloadWindow);
 // const circle = document.querySelector('.circle');
 // const downloadBtn = document.querySelector('.download-btn');
 // downloadBtn.addEventListener('click', () => {
