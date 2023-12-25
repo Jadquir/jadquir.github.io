@@ -148,6 +148,7 @@ button:not(.no-button).primary:hover {
 }
 @media  (max-width: 1300px) {
     .icon-button{
+        position: relative !important;
         width: auto;
     }
 }

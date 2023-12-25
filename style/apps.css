@@ -36,7 +36,12 @@
 }.app-card .right .app-buttons {
     position: absolute;
     bottom: 0px;
-}.app-card .video-container iframe ,
+}
+.app-card .right .icon-button {
+    position: absolute;
+    bottom: 5px;
+}
+.app-card .video-container iframe ,
 .app-card .video-container img {
     width: 100%;
     height: 100%;
