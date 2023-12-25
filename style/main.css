@@ -273,7 +273,7 @@ textarea:focus {
 .social .url {
     margin-left: 5px;
     font-size: 17px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 55em) {
@@ -305,8 +305,8 @@ textarea:focus {
 }
 
 .socials {
-    margin-bottom: 0px;
-    margin: 25px 0px;
+    /* margin-bottom: 0px;
+    margin: 25px 0px; */
 }
 
 
@@ -352,6 +352,7 @@ textarea:focus {
 
 textarea {
     min-height: 100px !important;
+    resize: vertical; 
 }
 
 .url:hover {
