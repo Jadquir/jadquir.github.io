@@ -27,16 +27,8 @@
   set_black_color(color_black) {
     this.color_black = color_black;
   }
-  set_src(src) {
+  async load(src){
     this.image = new Image();
-    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
-    this.image.src = src;
-  }  
-  set_url(imageURL) {
-    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
-    this.imageURL = imageURL;
-  }
-  async init() {
     return new Promise((resolve, reject) => {
       this.image.onload = () => {
         const c = document.createElement("canvas");
@@ -46,10 +38,25 @@
         resolve();
       };
       this.image.onerror = () => {
-        reject(new Error(`Failed to load image from URL: ${this.imageURL}`));
+        reject(new Error(`Failed to load image: ${src}`));
       };
-      this.image.src = this.imageURL;
+      this.image.src = src;
     });
+  }
+
+  set_src(src) {
+    this.image = new Image();
+    this.image.crossOrigin = 'anonymous'
+    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
+    this.image.src = src;
+  }  
+  set_url(imageURL) {
+    this.image.crossOrigin = 'anonymous'
+    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
+    this.imageURL = imageURL;
+  }
+  async init() {
+    return this.load(this.imageURL);
   }
 
   isLoaded() {

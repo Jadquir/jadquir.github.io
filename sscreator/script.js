@@ -2,6 +2,11 @@ const canvas = document.getElementById("canvas");
 canvas.width = 1500;
 canvas.height = 1000;
 const ctx = canvas.getContext("2d");
+
+
+const showImageLoaded = () => showSnackbar("Image loaded successfully!", 5000, "success");
+const showError = (err, second = 3000) => showSnackbar(err, second, "danger");
+
 // let isMouseDown = false;
 // let initialX = 0;
 // let initialY = 0;
@@ -70,14 +75,23 @@ function afterDownload() {
 document
   .getElementById("download-button")
   .addEventListener("click", function () {
-    downloadCanvasAsImage(canvas, "Splash Screen.png");
-    afterDownload();
+    try {
+      downloadCanvasAsImage(canvas, "Splash Screen.png");
+      afterDownload();
+    } catch (error) {
+      showError(error);
+    }
   });
 document
   .getElementById("download-button-config")
   .addEventListener("click", function () {
-    downloadConfig(canvas);
-    afterDownload();
+    try {
+      throw "error hello 23";
+      downloadConfig(canvas);
+      afterDownload();
+    } catch (error) {
+      showError(error);
+    }
   });
 
 function downloadConfig(canvas) {
@@ -134,15 +148,30 @@ async function readImageFile(file) {
 }
 const imageUrl = document.getElementById("imageUrl");
 const fileInput = document.getElementById("fileInput");
+
+const loadingBar = document.getElementById("loadingBar");
+const showLoad = () => loadingBar.classList.add("visible");
+const hideLoad = () => loadingBar.classList.remove("visible");
 async function loadUserImage() {
   try {
+    showLoad();
     if (imageUrl.value) {
       user_img.set_url(imageUrl.value);
-      user_img.initlizeImage(imageUrl.value);
+      // user_img.initlizeImage(imageUrl.value);
+      user_img.load_user(imageUrl.value).then(() => {
+        showImageLoaded();
+      }).catch(err => {
+        showError(err);
+      })
       return imageUrl.value; // Return the image URL
     } else if (fileInput.files && fileInput.files[0]) {
       const imageData = await readImageFile(fileInput.files[0]);
-      user_img.initlizeImage(imageData);
+      user_img.load_user(imageData).then(() => {
+        showImageLoaded();
+      }).catch(err => {
+        showError(err);
+      })
+      // user_img.initlizeImage(imageData);
       return imageData; // Return the image data
     } else {
       throw new Error(
@@ -153,23 +182,48 @@ async function loadUserImage() {
     console.error(error.message);
     throw error;
   }
+  finally {
+    hideLoad();
+  }
 }
 function handleUpload() {
   user_img.wait_forload().then(() => {
     resetPositions();
   });
 }
+function refresh() {
+
+  handleUpload();
+  hideLoad();
+}
 function handleImageUrl(event) {
   event.preventDefault();
+  showLoad();
   user_img.set_url(imageUrl.value);
-  user_img.initlizeImage(imageUrl.value);
-  handleUpload();
+  // user_img.initlizeImage(imageUrl.value);
+  user_img.load_user(imageUrl.value).then(() => {
+    showImageLoaded();
+    refresh();
+  }).catch(err => {
+    showError(err);
+    refresh();
+  })
 }
 function handleImageUpload(event) {
   event.preventDefault();
+  showLoad();
   readImageFile(fileInput.files[0]).then((x) => {
-    user_img.initlizeImage(x);
-    handleUpload();
+    user_img.load_user(x).then(() => {
+      showImageLoaded();
+      refresh();
+    }).catch(err => {
+      showError(err);
+      refresh();
+    })
+    // user_img.initlizeImage(x);
+  }).catch(err => {
+    showError(err);
+    refresh();
   });
 }
 function chnageState(element, allowed) {
@@ -263,7 +317,7 @@ const user_img = new UserImage(
   "PhotoshopSplashImages/user_img.png"
 );
 const defaultImage = "PhotoshopSplashImages/user_img.png";
-user_img.initlizeImage(defaultImage);
+user_img.load_user(defaultImage);
 const imageArray = [
   app_text,
   bg,

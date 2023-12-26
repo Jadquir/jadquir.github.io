@@ -6,6 +6,22 @@ class UserImage extends ImageBase {
     this.userimg.crossOrigin = 'anonymous'
     this.userimg.src = image;
   }
+  async load_user(src) {
+    this.userimg = new Image();
+    if(src == typeof(String)){
+      this.imageURL = src;
+        }
+    return new Promise((resolve, reject) => {
+      this.userimg.onload = () => {
+        setTimeout(()=>resolve(), 2000);
+        // resolve();
+      };
+      this.userimg.onerror = () => {
+        reject(new Error(`Failed to load image: ${src}`));
+      };
+      this.userimg.src = src;
+    });
+  }
   set_dimensions(x, y, width, height) {
     this.user_x = x;
     this.user_y = y;
@@ -34,15 +50,15 @@ class UserImage extends ImageBase {
     // Restore the context state (remove the clipping path)
     ctx.restore();
   }
-isPortrait(){
-  // Calculate the aspect ratio of the image
-  var imageAspectRatio = this.userimg.width / this.userimg.height;
+  isPortrait() {
+    // Calculate the aspect ratio of the image
+    var imageAspectRatio = this.userimg.width / this.userimg.height;
 
-  var newHeight = this.width / imageAspectRatio;
+    var newHeight = this.width / imageAspectRatio;
 
-  var isportrait = newHeight < this.height;
-  return isportrait;
-}
+    var isportrait = newHeight < this.height;
+    return isportrait;
+  }
   assignNewDimension() {
     // Calculate the aspect ratio of the image
     var imageAspectRatio = this.userimg.width / this.userimg.height;
@@ -95,7 +111,7 @@ isPortrait(){
     // Calculate the centering offset to position the image within the bounding area
     var xOffset = this.user_x - newWidth / 2; // Center the image based on user_x
     var yOffset = this.user_y - newHeight / 2; // Center the image based on user_y
-    
+
 
     ctx.drawImage(this.userimg, xOffset, yOffset, newWidth, newHeight);
     this.drawRoundedImage(

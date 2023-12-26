@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="snackbar.css" />
     <link rel="stylesheet" type="text/css" href="../style/button.css" />
     <link rel="stylesheet" type="text/css" href="../style/common.css" />
     <script src="../scripts/navbar.js" type="text/javascript" defer></script>
     <script src="./editor/image_base.js" type="text/javascript"></script>
     <script src="./editor/user_image.js" type="text/javascript"></script>
     <script src="script.js" type="text/javascript" defer></script>
+    <script src="js/snackbar.js" type="text/javascript" defer></script>
     <script src="js/tabs.js" type="text/javascript" defer></script>
     <!-- <meta http-equiv="Refresh" content="0; url='https://www.jadquir.com'" /> -->
 
@@ -87,6 +89,10 @@
     />  <link rel="icon" type="image/gif/png" href="../images/logo.png" />
     <script
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="./js/snackbar.js"
       type="text/javascript"
     ></script>
   </head>
@@ -166,6 +172,12 @@
                 </button>
               </form>
             </div>
+            <div id="loadingBar">
+              <div id="pgbar" class="progress-bar indeterminate">
+                <div class="short-bar"></div>
+                <div class="long-bar"></div>
+              </div>
+            </div>
           </div>
 
           <div class="positions content-holder">
@@ -243,6 +255,7 @@
             </button>
           </div>
         </div>
+        
       </main>
 
       <main class="mobile">
@@ -334,6 +347,8 @@
         </a>
       </div>
     </div>
+    <!-- The actual snackbar -->
+    <div id="snackbar" class="success"></div>
     <script
       data-name="BMC-Widget"
       data-cfasync="false"

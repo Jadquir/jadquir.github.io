@@ -374,3 +374,90 @@ svg g path {
   align-items: center;
 
 }
+@keyframes progressbarindeterminateshort {
+  0% {
+    left: -40%;
+  }
+
+  75% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes progressbarindeterminatelong {
+  0% {
+    left: -90%;
+  }
+
+  37.5% {
+    left: -90%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+#loadingBar{
+  width: var(--width);
+  --width: calc(100% - (2*var(--border)));
+  --border: 2px;
+  display: flex;
+  align-items: flex-end;
+  border: var(--border) solid #cccccc13;
+  border-radius: 5px;
+  opacity: 0;
+}
+#loadingBar.visible{
+  opacity: 1;
+  transition: opacity .3s;
+}
+#pgbar {
+  /* position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%); */
+  width: 100% ;
+}
+
+.progress-bar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #222428;
+  height: 9px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden !important;
+}
+
+.progress-bar > .short-bar {
+  background-color: var(--accent);
+  width: 40%;
+  height: 100%;
+  left: -40%;
+  border-radius: 5px;
+  position: absolute;
+  display: inline-block;
+  -webkit-animation: progressbarindeterminateshort 2s ease-in-out infinite;
+  -moz-animation: progressbarindeterminateshort 2s ease-in-out infinite;
+  -o-animation: progressbarindeterminateshort 2s ease-in-out infinite;
+  animation: progressbarindeterminateshort 2s ease-in-out infinite;
+}
+
+.progress-bar > .long-bar {
+  background-color: var(--accent);
+  width: 60%;
+  height: 100%;
+  left: -90%;
+  border-radius: 5px;
+  position: absolute;
+  display: inline-block;
+  -webkit-animation: progressbarindeterminatelong 2s ease-in-out infinite;
+  -moz-animation: progressbarindeterminatelong 2s ease-in-out infinite;
+  -o-animation: progressbarindeterminatelong 2s ease-in-out infinite;
+  animation: progressbarindeterminatelong 2s ease-in-out infinite;
+}
