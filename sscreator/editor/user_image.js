@@ -3,18 +3,21 @@ const cornerRadius = 20;
 class UserImage extends ImageBase {
   initlizeImage(image) {
     this.userimg = new Image();
-    this.userimg.crossOrigin = 'anonymous'
+    this.image.crossOrigin = 'anonymous'
+    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
     this.userimg.src = image;
   }
   async load_user(src) {
     this.userimg = new Image();
+    this.image.crossOrigin = 'anonymous'
+    this.image.setAttribute('crossorigin', 'anonymous'); // works for me
     if(src == typeof(String)){
       this.imageURL = src;
-        }
+    }
     return new Promise((resolve, reject) => {
       this.userimg.onload = () => {
-        setTimeout(()=>resolve(), 2000);
-        // resolve();
+        // setTimeout(()=>resolve(), 2000);
+         resolve();
       };
       this.userimg.onerror = () => {
         reject(new Error(`Failed to load image: ${src}`));
