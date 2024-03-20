@@ -86,7 +86,6 @@ document
   .getElementById("download-button-config")
   .addEventListener("click", function () {
     try {
-      throw "error hello 23";
       downloadConfig(canvas);
       afterDownload();
     } catch (error) {
