@@ -222,7 +222,16 @@ section {
     color: #fff;
 }
 
+::selection {
+	color: var(--bg);
+	background-color: var(--accent);
+}
 
+/* for firefox */
+::moz-selection {
+	color: var(--bg);
+	background-color: var(--accent);
+}
 @media (prefers-color-scheme: light) {
     .primary-navigation li a {
         color: #323232;

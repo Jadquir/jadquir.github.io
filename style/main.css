@@ -394,7 +394,7 @@ textarea {
     width: 200px;
     cursor: pointer;
     height: 200px;
-
+transform: scale(1.05);
     background-color: var(--accent-lighter);
     color: #121316;
     border: 1px solid rgba(255, 255, 255, 0.208);

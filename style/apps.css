@@ -50,6 +50,11 @@
     -webkit-box-shadow: var(--card-glow);
     object-fit: cover;
     background: #121316;
+    transition: transform .2s ease-in-out;
+}
+.app-card .video-container:hover iframe ,
+.app-card .video-container:hover img {
+    transform: scale(1.02);
 }
 .separator{
     width: 50%;
