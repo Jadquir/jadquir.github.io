@@ -1,5 +1,6 @@
 
 function onloadWindow(){
+  
   const toggleButton = document.querySelector(".nav-toggle");
   const navBar =  document.querySelector(".primary-navigation");
   const menuIcon =  document.querySelector("#hamburger");
@@ -43,3 +44,7 @@ window.addEventListener('load', onloadWindow);
 //   URL.revokeObjectURL(url);
 // });
 
+
+const footer = document.querySelector("footer");
+
+footer.innerHTML = `This website is made by Jadquir. Copyright &copy; ${new Date().getFullYear()}. All rights reserved.`
