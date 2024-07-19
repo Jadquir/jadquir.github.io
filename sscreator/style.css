@@ -4,6 +4,50 @@ main {
   margin: 0;
   width: 90%;
   justify-content: flex-end;
+
+  --sidebar-bg: #222428;
+  --canvas-border: 3px solid #cccccc2b;
+  --content-bg:#32353b;
+
+  --button-bg: #222428;
+  --button-fg: white;
+
+  --input-bg: #222428;
+  --input-fg: white;
+
+  --select-bg: #222428;
+  --select-fg: rgb(135, 135, 136);
+  --content-border: #cccccc2b 1px solid;
+
+
+}
+@media (prefers-color-scheme: light) {
+  main {
+    --content-border: black 1px solid;
+   
+    --sidebar-bg: hsl(0deg 0% 100%);
+    --canvas-border: 3px solid #7979792b;
+    --content-bg: hsl(220deg 100% 93.41% / 51%);
+    --button-bg: white;
+    --button-fg: #222428;
+    --input-fg: #101010;
+    --input-bg: white;
+    --select-fg: #1c1c1d;
+    --select-bg: rgb(255, 255, 255);
+
+  }
+
+
+  .content-holder {
+filter: drop-shadow(1);
+  }
+  
+  
+.photo-button:hover {
+  background-color: var(--accent);
+  color: var(--button-bg);
+}
+
 }
 
 #canvas-container {
@@ -16,7 +60,7 @@ main {
 }
 
 #canvas {
-  border: 3px solid #cccccc2b;
+  border: var(--canvas-border);
   transform: scale(0.95);
   transform-origin: center;
   object-fit: contain;
@@ -26,7 +70,7 @@ main {
 
 #settings {
   padding: 20px;
-  background-color: #222428;
+  background-color: var(--sidebar-bg);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -64,8 +108,8 @@ input[type=file] {
 input[type=file]::file-selector-button {
   border: none;
   border-radius: 4px;
-  color: white;
-  background-color: #212125;
+  color: var(--input-fg);
+  background-color: var(--input-bg);
   height: 40px;
   cursor: pointer;
   transition: all .1s ease-in;
@@ -76,7 +120,7 @@ input[type=file]::file-selector-button {
 
 input[type=file]::file-selector-button:hover {
   background-color: var(--accent);
-  color: white;
+  color: var(--input-fg);
   transition: all .1s ease-in;
 }
 
@@ -86,8 +130,8 @@ input[type=file]::file-selector-button:active {
 
 input[type=text],
 input[type=number] {
-  background-color: #212125;
-  color: white;
+  background-color:  var(--input-bg);
+  color: var(--input-fg);
   border-radius: 5px;
   padding: 10px 10px;
   font-size: 13px;
@@ -129,7 +173,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .tab button {
   border: none;
-  background-color: #222428;
+  background-color: var(--sidebar-bg);
   color: rgb(135, 135, 136);
   transition: all 0.3s ease;
   width: 100%;
@@ -139,7 +183,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .tab button:hover {
   cursor: pointer;
-  color: aliceblue;
+  color: var(--accent);
 }
 
 .tab.active button {
@@ -160,8 +204,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .content-holder {
-
-  background: #32353b;
+  border: var(--content-border);
+  background: var(--content-bg);
   border-radius: 15px;
 }
 
@@ -202,7 +246,7 @@ input[type='checkbox']:checked {
 input[type=checkbox] {
   accent-color: var(--accent);
   border: none;
-  background: #222428;
+  background:  var(--select-bg);
   color: var(--accent);
   transition: all 0.3s ease;
   border-radius: 5px;
@@ -213,8 +257,8 @@ input[type=checkbox] {
 select {
   accent-color: var(--accent);
   border: none;
-  background-color: #222428;
-  color: rgb(135, 135, 136);
+  background-color: var(--select-bg);
+  color:  var(--select-fg);
   transition: all 0.3s ease;
   width: 100%;
   min-height: 35px;
@@ -322,7 +366,8 @@ svg g path {
 
 .photo-button {
   border: none;
-  background-color: #222428;
+  background-color: var(--button-bg);
+  color: var(--button-fg);
   padding: 15px 30px;
   font-weight: 600;
   border-radius: 7px;
@@ -331,7 +376,6 @@ svg g path {
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
-  color: aliceblue;
   font-size: 14px !important;
   transition: all 0.3s ease;
 }

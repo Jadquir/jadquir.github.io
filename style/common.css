@@ -48,6 +48,7 @@ body {
     :root   {        
         --bg: #f3f3f5 !important;
         --fg: #202020 !important;
+        --bg-lighter: #f3f3f5 !important;
     }
     body {
         background-color: #f3f3f5;
