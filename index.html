@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style/main.css" />
-    <link rel="stylesheet" type="text/css" href="style/button.css" />
-    <link rel="stylesheet" type="text/css" href="style/common.css" />
-    <link rel="stylesheet" type="text/css" href="style/index.css" />
-    <link rel="stylesheet" type="text/css" href="style/apps.css" />
-    <meta
-      property="og:description"
-      content="Hi, my name is Emircan 'Jadquir' Gezer. I am a 20 years old person who is interested in programming and photoshop manipulations. I sometimes work freelance on Bionluk and Fiverr."
-    />
+    <link rel="stylesheet" type="text/css" href="style_new/portfolio.css" />
+    <link rel="stylesheet" type="text/css" href="style_new/button.css" />
+    <link rel="stylesheet" type="text/css" href="style_new/common.css" />
+    <link rel="stylesheet" type="text/css" href="sscreator/snackbar.css" /><meta
+    property="og:description"
+    content="Emircan 'Jadquir' Gezer – A passionate programmer and digital creator specializing in game development, 2D pixel art, and innovative software solutions. Explore my projects and freelance services."
+  />
+  <meta
+    name="description"
+    content="Discover the portfolio of Emircan 'Jadquir' Gezer, a programmer and digital creator with expertise in game development, 2D pixel art, and unique software projects. Let's build something amazing together."
+  />
+  
     <link
       itemprop="image"
-      href="https://www.jadquir.com/images/jadquir_avatar_150.png"
+      href="https://www.jadquir.com/images/logo_low.png"
     />
     <meta property="og:url" content="https://www.jadquir.com" />
     <meta property="og:type" content="website" />
@@ -23,7 +26,7 @@
     <meta property="og:title" content="Emircan 'Jadquir' Gezer" />
     <meta
       property="og:image"
-      content="https://www.jadquir.com/images/jadquir_avatar_150.png"
+      content="https://www.jadquir.com/images/logo_low.png"
     />
     <meta property="og:image:width" content="150" />
     <meta property="og:image:height" content="150" />
@@ -31,40 +34,55 @@
     <link
       rel="icon"
       type="image/png"
-      href="images/jadquir_avatar_150.png"
+      href="images/logo_low.png"
       sizes="150x150"
-    />
-    <meta
-      name="description"
-      content="Hi, my name is Emircan 'Jadquir' Gezer. I am a 20 years old person who is interested in programming and photoshop manipulations. I sometimes work freelance on Bionluk and Fiverr."
     />
     <meta name="theme-color" content="#2657ea" />
     <meta
       name="keywords"
       content="Emircan, jadquir, Gezer,Emircan Gezer, Jadquir,Emircan Jadquir Gezer, Applications, Free,United Adobe Editor, Photoshop Splash Screen Changer, MRA, Music Identifier, Music Recognition Application, Shazam, Photoshop, Artowrk, Photoshop Artwork,Freelance, Bionluk"
     />
-    <link rel="icon" type="image/gif/png" href="images/logo.png" />
+    <link rel="icon" type="image/gif/png" href="images/logo_low.png" />
     <link
       itemprop="image"
-      href="https://www.jadquir.com/images/jadquir_avatar_2.png"
+      href="https://www.jadquir.com/images/logo_low.png"
     />
     <title>Emircan 'Jadquir' Gezer</title>
-    <script src="scripts/navbar.js" defer></script>
-    <script src="scripts/text.js" defer></script>
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet" />
     <!-- <script src="scripts/gradient.js" defer></script> -->
     <script
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
       type="text/javascript"
     ></script>
+    <script src="scripts/navbar_new.js" defer></script>
+    <script src="scripts/icons.js"></script>
+    <script src="scripts/single_image_view.js"></script>
+    <script src="sscreator/js/snackbar.js"></script>
+
+    <link rel="preload" as="image" href="./images/me.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="./images/logo_white_transparent_40.png"
+    />
   </head>
   <body>
-    <header class="primary-header flex" id="navContainer">
-      <div class="holder1">
-        <a href="/" class="logo"></a>
+    <header id="primary-header" data-visible="false">
+      <div class="header-items">
+        <div id="nav-image"></div>
+        <script>
+          var image = new Image();
+          image.loading = "eager";
+          image.src = "./images/logo_white_transparent_40.png";
+          image.onload = (ev) => {
+            console.log(ev);
+            document.querySelector("#nav-image").style.backgroundImage = image;
+          };
+        </script>
         <button
           class="nav-toggle no-button"
           aria-controls="primary-navigation"
-          aria-expanded="false"
+          aria-expanded="true"
         >
           <div id="hamburger">
             <span class="bar"></span>
@@ -74,521 +92,1583 @@
           <span class="sr-only">Menu</span>
         </button>
       </div>
-      <nav>
-        <ul
-          data-visible="false"
-          id="primary-navigation"
-          class="primary-navigation flex"
-        >
-          <li class="active">
-            <a href="#" class="nav"> Home </a>
-          </li>
 
+      <nav id="primary-navigation" data-visible="false">
+        <ul>
           <li>
-            <a href="#about" class="nav"> About Me </a>
+            <a href="#"> About Me </a>
           </li>
-
           <li>
-            <a href="#works" class="nav"> My Works </a>
+            <a href="#projects"> Projects </a>
           </li>
-
           <li>
-            <a href="#contact" class="nav"> Contact </a>
+            <a href="#skills"> Skills </a>
+          </li>
+          <li>
+            <a href="#contact"> Contact </a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="start">
-        <div class="hiText">
-          Hi, my name is&nbsp;
-          <div class="subTitle">Emircan Gezer</div>
-        </div>
-        <div class="imText">
-          <p class="hero-text">
-            I'm
-            <span class="typed-text" style="color: var(--accent-lighter)"
-              >a Freelancer</span
-            ><span class="cursor typing">|</span>
-          </p>
-        </div>
-        <a href="#about" class="button primary">Learn More</a>
-        <!-- <div class="bg-image im1"></div> -->
-      </section>
+      <section id="top">
+        <div class="first-part">
+          <div id="hero-image"></div>
+          <script>
+            const heroImage = document.querySelector("#hero-image");
+            var image = new Image();
+            image.alt = "Emircan 'Jadquir' Gezer Photo";
+            image.loading = "eager";
+            image.onload = function () {
+              heroImage.style.backgroundImage = `url('${image.src}')`;
+            };
+            image.src = "./images/me.png";
+          </script>
+          <div class="about-content">
+            <div class="hero-text">
+              <h1>
+                <span class="gradient anim">Hi!</span>
+                I am <br />
+                <span class="gradient anim">Emircan Gezer</span>
+              </h1>
+              <span class="aka">.aka Jadquir</span>
+              <span class="hero-sub"
+                >Student |<wbr /> Game Developer<wbr /> | Freelancer |
+                Programmer</span
+              >
+              <!-- 
+              <div class="separator vis"></div>
 
-      <section class="about" id="about">
-        <div class="hero-image-container">
-          <div class="hero-image"></div>
+              <div class="fast-info">
+                <div class="emoji-holder">
+                  <i
+                    class="em em-flag-tr"
+                    aria-role="presentation"
+                    aria-label="Turkey Flag"
+                  ></i>
+                  <span>Antalya, Turkiye</span>
+                  <br />
+                </div>
+
+                <div class="emoji-holder">
+                  <i
+                    class="em em-birthday"
+                    aria-role="presentation"
+                    aria-label="BIRTHDAY CAKE"
+                  ></i>
+                  <span>21 years old</span>
+                  <br />
+                </div>
+
+                <div class="emoji-holder">
+                  <i
+                    class="em em-book"
+                    aria-role="presentation"
+                    aria-label="OPEN BOOK"
+                  ></i>
+                  <span>Senior Math Student</span>
+                </div>
+              </div> -->
+
+              <div class="separator vis"></div>
+              <div class="fast-info">
+                <a href="#contact" class="button">
+                  <div class="icon email"></div>
+                  Contact Me
+                </a>
+                <a href="#about" class="button primary">
+                  <div class="icon info"></div>
+                  Learn More
+                </a>
+              </div>
+              <div class="separator vis"></div>
+              <a href="/old.html" class="button">
+                <div class="icon history"></div>
+                See the old design
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="glow" style="left: 40%; top: -490px; width: 1000px"></div>
+
+        <div
+          class="glow"
+          style="bottom: -420px; right: 42%; width: 850px"
+        ></div>
+        <div class="whoami-part">
+          <div class="whoami-holder">
+            <span>
+              I’m currently a senior Mathematics student at Ankara
+              University.<br />
+              <br />
+              My studies have given me a strong analytical foundation, which I
+              apply in my work as a C# developer. I focus primarily on game
+              development and desktop application development, creating engaging
+              and functional software.<br /><br />
+              In addition to C#, I also use JavaScript/Node.js for web-related
+              projects.
+            </span>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="tabs" id="tabHolder">
+          <button data-id="apps" onclick="openTab('apps')" class="isActive">
+            Applications
+          </button>
+          <button data-id="games" onclick="openTab('games')">Games</button>
+          <button data-id="photos" onclick="openTab('photos')">
+            Photo Manipulations
+          </button>
         </div>
         <script>
-          const heroImage = document.querySelector(".hero-image");
-          var image = new Image();
-          image.alt = "Emircan 'Jadquir' Gezer Photo";
-          image.onload = function () {
-            heroImage.style.backgroundImage = `url('${image.src}')`;
-          };
-          image.src = "./images/jadquir_avatar.png";
+          function openTab(id, scrollTo = true) {
+            const tabHeaders = Array.prototype.slice.call(
+              document.getElementById("tabHolder").children
+            );
+            const ids = tabHeaders.map((x) => x.dataset.id);
+            tabHeaders.forEach((element) => {
+              element.classList.remove("isActive");
+              if (element.dataset.id == id) {
+                element.classList.add("isActive");
+              }
+            });
+            ids.forEach((element) => {
+              document.getElementById("tabContents").classList.remove(element);
+            });
+            document.getElementById("tabContents").classList.add(id);
+            // Dispatch a custom event
+            const tabChangeEvent = new CustomEvent("tabChange", {
+              detail: { activeTab: id },
+            });
+            window.dispatchEvent(tabChangeEvent);
+            if(scrollTo){
+              document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })
 
+            }
+          }
+          window.addEventListener("load", () => {
+            openTab("apps",false);
+          });
         </script>
-        <div class="about-text glass">
-          <span class="title">About Me</span>
-          <span class="text">
-            <b>Hi,</b> my name is Emircan 'Jadquir' Gezer. I am a student at
-            Ankara University. I am a 20 years old person who is interested in
-            programming and photoshop manipulations. I sometimes work freelance
-            on
-            <a
-              class="hover-effect"
-              href="https://bionluk.com/jadquir"
-              target="_blank"
-              style="color: #fd4056"
-              >Bionluk</a
-            >
-            and
-            <a
-              class="hover-effect"
-              href="https://www.fiverr.com/jadquir"
-              target="_blank"
-              style="color: #00bf7a"
-              >Fiverr</a
-            >. <br />And I make free desktop applications and photoshop
-            manipulation in my free time.
-          </span>
-          <a
-            href="#works"
-            style="margin-top: 25px; max-width: fit-content; padding: 10px 20px"
-            class="button no-glow transparent"
-            >See My Works</a
-          >
-        </div>
-      </section>
-      <section class="works" id="works">
-        <span class="title">My Works</span>
-        <main class="app-card-container nomargin">
-          <div class="app-card">
-            <div class="video-container">
+
+        <div id="tabContents" class="apps">
+          <div class="project-grid app-content">
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="./images/ogetr_1 (1).png"
+                  data-src="./images/ogetr_1.png"
+                  alt="OGETR Main Menu Image | Jadquir"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">OGETR - Türkiye Oyun Geliştirme Etkinlikleri</h2>
+                <p class="description">
+                  OGETR is a websites that aims to make the game development events more accesible in Turkiye
+                </p>
+                <div class="links">
+                  <!-- <a
+                    class="button"
+                    href="https://youtu.be/y1ddh8EYO3k"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  > -->
+                  <a
+                    class="button"
+                    href="https://www.ogetr.com/"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fill"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm8-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm.01 8a1 1 0 102 0V9a1 1 0 10-2 0v5z"
+                      ></path>
+                    </svg>
+
+                    Learn More</a
+                  >
+                  <!-- <a
+                    class="button"
+                    href="https://mra.jadquir.com/#download"
+                    target="_blank"
+                  >
+                    <svg
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M17 12L12 17M12 17L7 12M12 17V4M17 20H7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+
+                    Download</a
+                  > -->
+                </div>
+                <div class="technologies">
+                  <span>Built With:</span>
+                  <div class="tech-icons">
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                    <span>Firebase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="./images/mra_low.png"
+                  data-src="https://mra.jadquir.com/images/screenshots/1.png"
+                  alt="MRA - Music Identifier - Music Discovery Main Menu Image | Jadquir"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">MRA - Music Identifier - Music Discovery</h2>
+                <p class="description">
+                  MRA is a music identifier for Windows.MRA listens to your
+                  microphone or the desktop sound and identifies the music then
+                  gives you information about the music like title, artist,
+                  album, genre, etc.
+                </p>
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/y1ddh8EYO3k"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://mra.jadquir.com/"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fill"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm8-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm.01 8a1 1 0 102 0V9a1 1 0 10-2 0v5z"
+                      ></path>
+                    </svg>
+
+                    Learn More</a
+                  >
+                  <a
+                    class="button"
+                    href="https://mra.jadquir.com/#download"
+                    target="_blank"
+                  >
+                    <svg
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M17 12L12 17M12 17L7 12M12 17V4M17 20H7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+
+                    Download</a
+                  >
+                </div>
+                <div class="technologies">
+                  <span>Built With:</span>
+                  <div class="tech-icons">
+                    <span>C#</span>
+                    <span>WPF</span>
+                    <span>Firebase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="./images/uae_low.png"
+                  data-src="https://camo.githubusercontent.com/4eba8bfc3a4b2581c99efbea50c16f61a3abb629f31230b0d65a961346d53298/68747470733a2f2f696d672e697463682e7a6f6e652f615731685a3255764d5463774d5467354e7938784d5449324e7a59344d533577626d633d2f6f726967696e616c2f3356554975632e706e67"
+                  alt="United Adobe Editor Image | Jadquir"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">United Adobe Editor</h2>
+                <p class="description">
+                  United Adobe Editor, is a UI color/splash screen changer for
+                  almost all Adobe applications.
+                </p>
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/HOOcz9qO8Wc"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/united-adobe-editor"
+                    target="_blank"
+                  >
+                    <svg
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M17 12L12 17M12 17L7 12M12 17V4M17 20H7"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+
+                    Download</a
+                  >
+                  <a
+                    class="button"
+                    href="https://github.com/Jadquir/UnitedAdobeEditor"
+                    target="_blank"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="fill"
+                    >
+                      <path
+                        d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z"
+                      ></path>
+                      <path
+                        d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z"
+                      ></path>
+                    </svg>
+
+                    GitHub</a
+                  >
+                </div>
+                <div class="technologies">
+                  <span>Built With:</span>
+                  <div class="tech-icons">
+                    <span>C#</span>
+                    <span>WPF</span>
+                    <span>Firebase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="./images/sscreator1.png"
+                  data-src="./images/sscreator1_high.png"
+                  alt="Adobe Splash Screen Creator Screenshot | Jadquir"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Adobe Splash Screen Creator Online</h2>
+                <p class="description">
+                  Adobe Splash Screen Creator Online is a Splash Screen Creator
+                  for most used Adobe Apps like Photoshop, After Effects,
+                  Premiere Pro etc. that can be downloaded or be used by United
+                  Adobe Editor.
+                </p>
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.com/sscreator/"
+                    target="_blank"
+                  >
+                    <svg
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g id="Interface / External_Link">
+                        <path
+                          style="fill: none"
+                          id="Vector"
+                          d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                          stroke="#000000"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </g>
+                    </svg>
+                    Visit Creator</a
+                  >
+                </div>
+                <div class="technologies">
+                  <span>Built With:</span>
+                  <div class="tech-icons">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-grid game-content">
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzE2MjA1NzQ1LnBuZw==/original/wrCDF%2F.png"
+                  alt="DreamNOT! by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">DreamNOT!</h2>
+                <p class="description">
+                  Game Jam: Boğaziçi Game Jam'24 and OGUJAM <br />
+                  Theme: Knot/Tie and Daydream <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span>
+                    Result: <span class="gold">2nd place</span> and
+                    <span class="diamond">1st place</span>
+                  </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/_cGdfGFAALw"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/dreamnot"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzE1OTQzNDA1LnBuZw==/315x250%23c/Affn0Y.png"
+                  alt="ember by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">ember</h2>
+                <p class="description">
+                  Game Jam: YıldızJam'24 <br />
+                  Theme: Delaying the Inevitable <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span> Result: <span class="bronze">10th place</span> </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/ember"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzE1MzQ4MDQ3LnBuZw==/315x250%23c/5Ck3r7.png"
+                  alt="Rifter by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Rifter</h2>
+                <p class="description">
+                  Game Jam: AtuJam'24 <br />
+                  Theme: Time <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span> Result: <span class="gold">2nd place</span> </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/rifter"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzE0MzA0MTg0LnBuZw==/315x250%23c/WgTe5k.png"
+                  alt="AstroCargo by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">AstroCargo</h2>
+                <p class="description">
+                  Game Jam: Hujam'23 <br />
+                  Theme: Futurism <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span> Result: <span class="bronze">3rd place</span> </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/JGkHPH6TfQk"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/astrocargo"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzE0MjMzNDc4LnBuZw==/315x250%23c/Fhv9Vr.png"
+                  alt="Cloneoma by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Cloneoma</h2>
+                <p class="description">
+                  Game Jam: Magara Jam 2023 <br />
+                  Theme: Mysterious Machine <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span> Result: <span class="gold">Top 15</span> </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/DqNxhajWEWY"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/cloneoma"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzEzMjQ3NDczLnBuZw==/315x250%23c/cOT4st.png"
+                  alt="The Hive Purge by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">The Hive Purge</h2>
+                <p class="description">
+                  Game Jam: Brackeys Game Jam 2023.2 <br />
+                  Theme: Deeper and Deeper <br />
+                </p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/the-hive-purge"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzEyNzQ5OTM0LnBuZw==/315x250%23c/OSV2gi.png"
+                  alt="AstroStrike by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">AstroStrike</h2>
+                <p class="description">
+                  Game Jam: GMTK Game Jam 2023 <br />
+                  Theme: Roles Reversed <br />
+                </p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/astrostrike"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzEyMzc0NDEwLnBuZw==/315x250%23c/jgWmqy.png"
+                  alt="Mortal Sprint by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Mortal Sprint</h2>
+                <p class="description">
+                  Game Jam: Boğaziçi Game Jam 23 <br />
+                  Theme: Just Barely <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span> Result: <span class="bronze">3rd place</span> </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/hMkIwGk2rJE"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/mortal-sprint"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzEyMTE1MzY3LnBuZw==/315x250%23c/b4dco7.png"
+                  alt="Reflectia by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Reflectia</h2>
+                <p class="description">
+                  Game Jam: Yıldız Jam 2023 <br />
+                  Theme: Alternative Lives <br />
+                </p>
+                <div class="result">
+                  <span style="width: 20px; height: 20px">
+                    <svg
+                      style="--w: 20px !important"
+                      class="stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 14V17M12 14C9.58104 14 7.56329 12.2822 7.10002 10M12 14C14.419 14 16.4367 12.2822 16.9 10M17 5H19.75C19.9823 5 20.0985 5 20.1951 5.01921C20.5918 5.09812 20.9019 5.40822 20.9808 5.80491C21 5.90151 21 6.01767 21 6.25C21 6.94698 21 7.29547 20.9424 7.58527C20.7056 8.77534 19.7753 9.70564 18.5853 9.94236C18.2955 10 17.947 10 17.25 10H17H16.9M7 5H4.25C4.01767 5 3.90151 5 3.80491 5.01921C3.40822 5.09812 3.09812 5.40822 3.01921 5.80491C3 5.90151 3 6.01767 3 6.25C3 6.94698 3 7.29547 3.05764 7.58527C3.29436 8.77534 4.22466 9.70564 5.41473 9.94236C5.70453 10 6.05302 10 6.75 10H7H7.10002M12 17C12.93 17 13.395 17 13.7765 17.1022C14.8117 17.3796 15.6204 18.1883 15.8978 19.2235C16 19.605 16 20.07 16 21H8C8 20.07 8 19.605 8.10222 19.2235C8.37962 18.1883 9.18827 17.3796 10.2235 17.1022C10.605 17 11.07 17 12 17ZM7.10002 10C7.03443 9.67689 7 9.34247 7 9V4.57143C7 4.03831 7 3.77176 7.09903 3.56612C7.19732 3.36201 7.36201 3.19732 7.56612 3.09903C7.77176 3 8.03831 3 8.57143 3H15.4286C15.9617 3 16.2282 3 16.4339 3.09903C16.638 3.19732 16.8027 3.36201 16.901 3.56612C17 3.77176 17 4.03831 17 4.57143V9C17 9.34247 16.9656 9.67689 16.9 10"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      &lt;
+                    </svg>
+                  </span>
+                  <span> Result: <span class="gold">1st place</span> </span>
+                </div>
+
+                <p></p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/reflectia"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1hZ2UvMTc3NzY5Ny8xMDQ1MzkzOS5wbmc=/original/Pp5ujN.png"
+                  alt="Chaos Diner by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Chaos Diner</h2>
+                <p class="description">
+                  Game Jam: Trijam 193 (3 hour jam) <br />
+                  Theme: Patience! <br />
+                </p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/chaos-diner"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1hZ2UvMTcwODA0Ni8xMDA2NjIxNS5wbmc=/347x500/433plA.png"
+                  alt="Bounty Fire by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Bounty Fire</h2>
+                <p class="description">
+                  Game Jam: Magara Jam 5 <br />
+                  Theme: You are the villain <br />
+                </p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/HU4nfJXYbgc"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/bounty-fire"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1hZ2UvMTQxMDcwNS84MjIxMjA0LnBuZw==/347x500/9m2KwU.png"
+                  alt="Failure is Success by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Failure is Success</h2>
+                <p class="description">
+                  Game Jam: Magara Jam 4 <br />
+                  Theme: __(Failure)__ is your super-power <br />
+                </p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/8CNfvNmX81E"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/failure-is-success"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="media">
+                <img
+                  class="viewable"
+                  src="https://img.itch.zone/aW1nLzY0OTE4MzgucG5n/315x250%23c/WQU%2B9p.png"
+                  alt="Servers of Bugs by Jadquir Image"
+                  loading="lazy"
+                  style="cursor: pointer"
+                />
+              </div>
+              <div class="content">
+                <h2 class="title">Servers of Bugs (My First Game)</h2>
+                <p class="description">
+                  Game Jam: Magara Jam 3 <br />
+                  Theme: System Failure <br />
+                </p>
+
+                <div class="links">
+                  <a
+                    class="button"
+                    href="https://youtu.be/uWt8LNsCaP0"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      height="800px"
+                      width="800px"
+                      version="1.1"
+                      id="Layer_1"
+                      viewBox="0 0 461.001 461.001"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <path
+                          d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728   c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137   C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607   c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    Watch Video // Youtube</a
+                  >
+                  <a
+                    class="button"
+                    href="https://jadquir.itch.io/serversofbugs"
+                    target="_blank"
+                  >
+                    <svg
+                      class="fill"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 245.371 220.736"
+                    >
+                      <path
+                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
+                      ></path>
+                    </svg>
+                    Game Page // Itch.io</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-grid photo-content">
+            <div class="column">
               <img
-                alt="Adobe Splash SCreen Creator Online by Jadquir Website Screenshot"
-                style="object-position: center; object-fit: contain"
-                src="./images/sscreator1.png"
+                src="./images/artworks/low_res/2.png"
+                class="viewable"
+                alt="Benny's Spooky Edit War 2021 | Jadquir"
+                loading="lazy"
+                data-src="./images/artworks/high_res/2.png"
+                style="cursor: pointer"
+              /><img
+                src="./images/artworks/low_res/5.png"
+                alt="Benny's Monthly Contest Medieval Theme | Jadquir"
+                class="viewable"
+                loading="lazy"
+                data-src="./images/artworks/high_res/5.png"
+                style="cursor: pointer"
               />
             </div>
-            <div class="right">
-              <div class="title">Adobe Splash Screen Creator Online</div>
-              <div class="description">
-                Adobe Splash Screen Creator Online is a Splash Screen Creator
-                for most used Adobe Apps like Photoshop, After Effects, Premiere
-                Pro etc. that can be downloaded or be used by United Adobe
-                Editor
-              </div>
-              <a
-                target="_blank"
-                class="button icon-button accent no-glow"
-                href="./sscreator/"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="800px"
-                  height="800px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  style="--w: 30px"
-                >
-                  <g id="Interface / External_Link">
-                    <path
-                      style="fill: none; stroke: aliceblue"
-                      id="Vector"
-                      d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
-                      stroke="#000000"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                </svg>
-
-                <span>Visit Creator</span>
-              </a>
+            <div class="column">
+              <img
+                src="./images/artworks/low_res/1.png"
+                class="viewable"
+                loading="lazy"
+                alt="Alone in the Universe Artwork by Jadquir"
+                data-src="./images/artworks/high_res/1.png"
+                style="cursor: pointer"
+              /><img
+                src="./images/artworks/low_res/4.png"
+                class="viewable"
+                alt="Benny as Clu from Tron:Legacy | Benny's Monthly Contest 'Movies and TV' Theme | Jadquir"
+                loading="lazy"
+                data-src="./images/artworks/high_res/4.png"
+                style="cursor: pointer"
+              />
+            </div>
+            <div class="column">
+              <img
+                src="./images/artworks/low_res/3.png"
+                class="viewable"
+                alt="Benny McFly | Benny's Monthly Contest 'Movies and TV' Theme | Jadquir"
+                loading="lazy"
+                data-src="./images/artworks/high_res/3.png"
+                style="cursor: pointer"
+              /><img
+                src="./images/artworks/low_res/6.png"
+                class="viewable"
+                alt="The Last Observer Artwork by Jadquir"
+                loading="lazy"
+                data-src="./images/artworks/high_res/6.png"
+                style="cursor: pointer"
+              />
             </div>
           </div>
-          <div class="separator"></div>
-          <div
-            class="app-card reveal-up"
-            style="
-              opacity: 1;
-              visibility: inherit;
-              transform: translate(0px, 0px);
-            "
+        </div>
+
+        <div class="other-projects">
+          <a href="#projects" class="button"
+            ><div class="icon arrowUp"></div>
+            See my other projects</a
           >
-            <div class="video-container">
-              <iframe
-                src="https://www.youtube.com/embed/HOOcz9qO8Wc"
-                title="United Adobe Editor"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></iframe>
-            </div>
-            <div class="right">
-              <div class="title">United Adobe Editor</div>
-              <div class="description">
-                United Adobe Editor is an open-source Splash Screen Changer for
-                most used Adobe Applications. (You can also change the UI Color
-                of Photoshop)
-              </div>
-              <div class="app-buttons">
-                <a
-                  target="_blank"
-                  class="button accent no-glow icon-button stroked"
-                  href="https://jadquir.itch.io/united-adobe-editor"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="800px"
-                    style="--w: 30px"
-                    height="800px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M17 12L12 17M12 17L7 12M12 17V4M17 20H7"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>Download</span>
-                </a>
-                <a
-                  target="_blank"
-                  class="button accent no-glow icon-button filled"
-                  href="https://github.com/Jadquir/UnitedAdobeEditor"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="800px"
-                    height="800px"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    style="--w: 28px"
-                  >
-                    <path
-                      d="M4.0744 2.9938C4.13263 1.96371 4.37869 1.51577 5.08432 1.15606C5.84357 0.768899 7.04106 0.949072 8.45014 1.66261C9.05706 1.97009 9.11886 1.97635 10.1825 1.83998C11.5963 1.65865 13.4164 1.65929 14.7213 1.84164C15.7081 1.97954 15.7729 1.97265 16.3813 1.66453C18.3814 0.651679 19.9605 0.71795 20.5323 1.8387C20.8177 2.39812 20.8707 3.84971 20.6494 5.04695C20.5267 5.71069 20.5397 5.79356 20.8353 6.22912C22.915 9.29385 21.4165 14.2616 17.8528 16.1155C17.5801 16.2574 17.3503 16.3452 17.163 16.4167C16.5879 16.6363 16.4133 16.703 16.6247 17.7138C16.7265 18.2 16.8491 19.4088 16.8973 20.4002C16.9844 22.1922 16.9831 22.2047 16.6688 22.5703C16.241 23.0676 15.6244 23.076 15.2066 22.5902C14.9341 22.2734 14.9075 22.1238 14.9075 20.9015C14.9075 19.0952 14.7095 17.8946 14.2417 16.8658C13.6854 15.6415 14.0978 15.185 15.37 14.9114C17.1383 14.531 18.5194 13.4397 19.2892 11.8146C20.0211 10.2698 20.1314 8.13501 18.8082 6.83668C18.4319 6.3895 18.4057 5.98446 18.6744 4.76309C18.7748 4.3066 18.859 3.71768 18.8615 3.45425C18.8653 3.03823 18.8274 2.97541 18.5719 2.97541C18.4102 2.97541 17.7924 3.21062 17.1992 3.49805L16.2524 3.95695C16.1663 3.99866 16.07 4.0147 15.975 4.0038C13.5675 3.72746 11.2799 3.72319 8.86062 4.00488C8.76526 4.01598 8.66853 3.99994 8.58215 3.95802L7.63585 3.49882C7.04259 3.21087 6.42482 2.97541 6.26317 2.97541C5.88941 2.97541 5.88379 3.25135 6.22447 4.89078C6.43258 5.89203 6.57262 6.11513 5.97101 6.91572C5.06925 8.11576 4.844 9.60592 5.32757 11.1716C5.93704 13.1446 7.4295 14.4775 9.52773 14.9222C10.7926 15.1903 11.1232 15.5401 10.6402 16.9905C10.26 18.1319 10.0196 18.4261 9.46707 18.4261C8.72365 18.4261 8.25796 17.7821 8.51424 17.1082C8.62712 16.8112 8.59354 16.7795 7.89711 16.5255C5.77117 15.7504 4.14514 14.0131 3.40172 11.7223C2.82711 9.95184 3.07994 7.64739 4.00175 6.25453C4.31561 5.78028 4.32047 5.74006 4.174 4.83217C4.09113 4.31822 4.04631 3.49103 4.0744 2.9938Z"
-                    />
-                    <path
-                      d="M3.33203 15.9454C3.02568 15.4859 2.40481 15.3617 1.94528 15.6681C1.48576 15.9744 1.36158 16.5953 1.66793 17.0548C1.8941 17.3941 2.16467 17.6728 2.39444 17.9025C2.4368 17.9449 2.47796 17.9858 2.51815 18.0257C2.71062 18.2169 2.88056 18.3857 3.05124 18.5861C3.42875 19.0292 3.80536 19.626 4.0194 20.6962C4.11474 21.1729 4.45739 21.4297 4.64725 21.5419C4.85315 21.6635 5.07812 21.7352 5.26325 21.7819C5.64196 21.8774 6.10169 21.927 6.53799 21.9559C7.01695 21.9877 7.53592 21.998 7.99999 22.0008C8.00033 22.5527 8.44791 23.0001 8.99998 23.0001C9.55227 23.0001 9.99998 22.5524 9.99998 22.0001V21.0001C9.99998 20.4478 9.55227 20.0001 8.99998 20.0001C8.90571 20.0001 8.80372 20.0004 8.69569 20.0008C8.10883 20.0026 7.34388 20.0049 6.67018 19.9603C6.34531 19.9388 6.07825 19.9083 5.88241 19.871C5.58083 18.6871 5.09362 17.8994 4.57373 17.2891C4.34391 17.0194 4.10593 16.7834 3.91236 16.5914C3.87612 16.5555 3.84144 16.5211 3.80865 16.4883C3.5853 16.265 3.4392 16.1062 3.33203 15.9454Z"
-                    />
-                  </svg>
-                  <span>Github</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="separator"></div>
-          <div class="app-card">
-            <div class="video-container">
-              <iframe
-                src="https://www.youtube.com/embed/y1ddh8EYO3k"
-                title="MRA"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen=""
-              ></iframe>
-            </div>
-            <div class="right">
-              <div class="title">MRA - Music Identifier - Music Discovery</div>
-              <div class="description">
-                MRA (short for Music Recognition Application) is a music
-                recognition application, or music identifier, like Shazam but
-                for PC. MRA listens to your microphone or the desktop sound and
-                identifies the music and then gives you information about the
-                music you found like title, artist, album, genre, etc. You can
-                listen to the music on different platforms, see lyrics, see
-                similar kinds of music, and much more.
-              </div>
-              <a
-                target="_blank"
-                class="button icon-button accent no-glow"
-                href="http://mra.jadquir.com/"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  style="--w: 30px"
-                  width="800px"
-                  height="800px"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 3a7 7 0 100 14 7 7 0 000-14zm-9 7a9 9 0 1118 0 9 9 0 01-18 0zm8-4a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm.01 8a1 1 0 102 0V9a1 1 0 10-2 0v5z"
-                  />
-                </svg>
-
-                <span>Learn More</span>
-              </a>
-            </div>
-          </div>
-        </main>
-
-        <span class="title">See all</span>
-        <div class="card-parent">
-          <a class="card" href="applications.html">
-            <div class="icon">
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <title></title>
-                <g data-name="Layer 40" id="Layer_40">
-                  <path
-                    class="cls-1"
-                    d="M28,24H4a3,3,0,0,1-3-3V5A3,3,0,0,1,4,2H28a3,3,0,0,1,3,3V21A3,3,0,0,1,28,24ZM4,4A1,1,0,0,0,3,5V21a1,1,0,0,0,1,1H28a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"
-                  ></path>
-                  <path
-                    class="cls-1"
-                    d="M21,30H11a1,1,0,0,1-1-1.16l1-6A1,1,0,0,1,12,22h8a1,1,0,0,1,1,.84l1,6A1,1,0,0,1,21,30Zm-8.82-2h7.64l-.67-4h-6.3Z"
-                  ></path>
-                  <path
-                    class="cls-1"
-                    d="M24,30H8a1,1,0,0,1,0-2H24a1,1,0,0,1,0,2Z"
-                  ></path>
-                  <path
-                    class="cls-1"
-                    d="M30,19H2a1,1,0,0,1,0-2H30a1,1,0,0,1,0,2Z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-
-            <span class="title">Desktop Applications</span>
-          </a>
-          <a class="card" href="artworks.html">
-            <div class="icon">
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <title />
-                <g id="Image">
-                  <path
-                    d="M25,2H7A5,5,0,0,0,2,7V25a5,5,0,0,0,5,5H25a5,5,0,0,0,5-5V7A5,5,0,0,0,25,2ZM7,4H25a3,3,0,0,1,3,3v5.59l-1.88-1.88a3,3,0,0,0-4.24,0l-7.95,8-3-2.42a3,3,0,0,0-3.8,0L4,18.86V7A3,3,0,0,1,7,4ZM25,28H7a3,3,0,0,1-3-3V21.47l4.38-3.66a1,1,0,0,1,1.27,0l3.73,3a1,1,0,0,0,1.33-.07l8.58-8.59a1,1,0,0,1,1.42,0L28,15.41V25A3,3,0,0,1,25,28Z"
-                  />
-                  <path
-                    d="M10,13a3,3,0,1,0-3-3A3,3,0,0,0,10,13Zm0-4a1,1,0,1,1-1,1A1,1,0,0,1,10,9Z"
-                  />
-                </g>
-              </svg>
-            </div>
-            <span class="title">Photoshop Manipulations</span>
-          </a>
-          <a class="card" href="games.html">
-            <div class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <path
-                  d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 248c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40zm-24 56c0 22.1-17.9 40-40 40s-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z"
-                />
-              </svg>
-            </div>
-
-            <span class="title">Games</span>
-          </a>
         </div>
       </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="gradient">Programming Languages</h3>
+            <ul>
+              <li>C#</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>HTML & CSS</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="gradient" style="animation-delay: 40ms">
+              Frameworks & Libraries
+            </h3>
+            <ul>
+              <li>Unity (Game Development)</li>
+              <li>WPF, WinForms, UWP</li>
+              <li>Node.js</li>
+              <li>Next.js</li> 
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="gradient" style="animation-delay: 420ms">
+              Tools & Software
+            </h3>
+            <ul>
+              <li>Firebase</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3 class="gradient" style="animation-delay: 120ms">Languages</h3>
+            <ul>
+              <li>Turkish (Native)</li>
+              <li>English (C1)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
 
-      <section id="contact" class="contact">
-        <div class="title">Contact</div>
-        <div
-          class="contact-container reveal-up"
+      <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+
+        <span
           style="
-            opacity: 1;
-            visibility: inherit;
-            transform: translate(0px, 0px);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
           "
-        >
-          <div class="left section">
-            <form
-              action="https://formsubmit.co/jadquircontact@gmail.com"
-              method="POST"
-            >
-              <div class="textbox">
-                <div class="text">Name</div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Example Name"
-                  required=""
-                />
-              </div>
-              <div class="textbox">
-                <div class="text">Email</div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="example@domain.com"
-                  required=""
-                />
-              </div>
-              <div class="textbox">
-                <div class="text">Message</div>
-                <textarea
-                  type="text"
-                  name="message"
-                  placeholder="Your Message"
-                  required=""
-                ></textarea>
-              </div>
-              <button
-                class="accent icon-button stroked"
-                type="submit"
-                name="submit"
-                style="padding: 13px 35px"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="800px"
-                  height="800px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  class="send-icon"
-                  style="margin-left: -6px"
-                >
-                  <path
-                    d="M10.3009 13.6949L20.102 3.89742M10.5795 14.1355L12.8019 18.5804C13.339 19.6545 13.6075 20.1916 13.9458 20.3356C14.2394 20.4606 14.575 20.4379 14.8492 20.2747C15.1651 20.0866 15.3591 19.5183 15.7472 18.3818L19.9463 6.08434C20.2845 5.09409 20.4535 4.59896 20.3378 4.27142C20.2371 3.98648 20.013 3.76234 19.7281 3.66167C19.4005 3.54595 18.9054 3.71502 17.9151 4.05315L5.61763 8.2523C4.48114 8.64037 3.91289 8.83441 3.72478 9.15032C3.56153 9.42447 3.53891 9.76007 3.66389 10.0536C3.80791 10.3919 4.34498 10.6605 5.41912 11.1975L9.86397 13.42C10.041 13.5085 10.1295 13.5527 10.2061 13.6118C10.2742 13.6643 10.3352 13.7253 10.3876 13.7933C10.4468 13.87 10.491 13.9585 10.5795 14.1355Z"
-                    stroke="#000000"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <!-- <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="800px"
-                  style="--w: 30px"
-                  height="800px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M17 12L12 17M12 17L7 12M12 17V4M17 20H7"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg> -->
-                <span>Send</span>
-              </button>
-              <!-- <button
-                class="submit button accent"
-                style="padding: 12px 40px"
-                type="submit"
-                name="submit"
-              >
-                Send
-              </button> -->
-            </form>
-          </div>
-          <div class="right section">
-            <div class="title">Or you can reach the links down below</div>
-            <div class="socials">
-              <div class="social">
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                    <path
-                      d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"
-                    ></path>
-                  </svg>
-                </div>
-                <a
-                  class="url hover-effect"
-                  href="https://discord.com/invite/4RsEywFGQn"
-                >
-                  Discord Server</a
-                >
-              </div>
-              <div class="social">
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path
-                      d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
-                    ></path>
-                  </svg>
-                </div>
-                <a
-                  class="url hover-effect"
-                  href="https://www.youtube.com/channel/UCfFGFB1flw00AiHw_4xYvPw?sub_confirmation=1"
-                >
-                  Emircan Gezer</a
-                >
-              </div>
-              <div class="social">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 245.371 220.736"
-                  >
-                    <path
-                      d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z"
-                    />
-                  </svg>
-                </div>
-                <a
-                  class="url hover-effect"
-                  href="https://jadquir.itch.io/"
-                >
-                  Itch.io Page</a
-                >
-              </div>
-              <div class="social">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    data-supported-dps="24x24"
-                    fill="currentColor"
-                    class="mercado-match"
-                    focusable="false"
-                  >
-                    <path
-                      d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
-                    ></path>
-                  </svg>
-                </div>
-                <a
-                  class="url hover-effect"
-                  href="https://www.linkedin.com/in/emircan-jadquir-gezer/"
-                >
-                  Linkedin</a
-                >
-              </div>
-              <div class="social">
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                      d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"
-                    ></path>
-                  </svg>
-                </div>
-                <a
-                  class="url hover-effect"
-                  href="mailto:jadquircontact@gmail.com"
-                >
-                  jadquircontact@gmail.com</a
-                >
-              </div>
+          >Email me :
+          <a href="mailto:jadquircontact@gmail.com" class="button"
+            ><div class="icon email"></div>
+            jadquircontact@gmail.com</a
+          >
+          <button
+            class="button noIconMargin"
+            onclick="copyEmail()"
+            style="padding: 0px 10px"
+          >
+            <div class="icon copy"></div>
+          </button>
+          <script>
+            async function copyEmail() {
+              try {
+                await navigator.clipboard.writeText("jadquircontact@gmail.com");
+                showSnackbar("Successfully copied the email!", 1500, "success");
+              } catch (error) {
+                showSnackbar("Error: " + error, 3500, "danger");
+              }
+            }
+          </script>
+        </span>
+        <h3>OR</h3>
+        <span>Reach me from one of my socials</span>
+        <div class="contact-grid">
+          <a href="https://github.com/Jadquir" class="contact-item button">
+            <div class="contact-icon icon-github">
+              <div class="div icon github"></div>
             </div>
-          </div>
+            <span>Github</span>
+          </a>
+
+          <a href="https://www.youtube.com/@Jadquir" class="contact-item button">
+            <div class="contact-icon icon-youtube">
+              <div class="div icon youtube"></div>
+            </div>
+            <span>Youtube</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/emircanjgezer/" class="contact-item button">
+            <div class="contact-icon icon-linkedin">
+              <div class="div icon linkedin"></div>
+            </div>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="https://discord.com/invite/4RsEywFGQn" class="contact-item button">
+            <div class="contact-icon icon-discord">
+              <div class="div icon discord"></div>
+            </div>
+            <span>Discord</span>
+          </a>
+
+          <a href="https://jadquir.itch.io/" class="contact-item button">
+            <div class="contact-icon icon-itch">
+              <div class="div icon itch"></div>
+            </div>
+            <span>Itch.io</span>
+          </a>
         </div>
       </section>
-      <script
-        data-name="BMC-Widget"
-        data-cfasync="false"
-        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-        data-id="Jadquir"
-        data-description="Support me on Buy me a coffee!"
-        data-message=""
-        data-color="#5F7FFF"
-        data-position="Right"
-        data-x_margin="18"
-        data-y_margin="18"
-      ></script>
+      <!-- <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="fast-info">
+          <a href="" class="button"
+            ><div class="icon email"></div>
+            Email</a
+          >
+          <a href="" class="button"
+            ><div class="icon github"></div>
+            Github</a
+          >
+          <a href="" class="button"
+            ><div class="icon youtube"></div>
+            Youtube</a
+          >
+          <a href="" class="button"
+            ><div class="icon linkedin"></div>
+            Linkedin</a
+          >
+          <a href="" class="button"
+            ><div class="icon discord"></div>
+            Discord</a
+          >
+          <a href="" class="button"
+            ><div class="icon itch"></div>
+            Itch.io</a
+          >
+        </div>
+      </section> -->
     </main>
+    <div class="contact-grad"></div>
+    <div id="snackbar" class="success"></div>
+
     <footer>
-      This website is made by Jadquir. Copyright &copy; 2023. All rights
+      This website is made by Jadquir. Copyright &copy; 2025. All rights
       reserved.
     </footer>
   </body>

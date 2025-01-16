@@ -115,7 +115,7 @@ section {
     height: 50px;
     margin: 5px 0px;
     
-    background-image: url(../images/logo.png);
+    background-image: url(../images/logo_white_transparent_40.png);
     
     aspect-ratio: 1;
     border: none;
@@ -150,11 +150,14 @@ section {
     transition: height .3s cubic-bezier(0, 0, 0.39, 1);
     transition: background-color .4s ease;
     --blur: 10px;
+    border: 1px solid #f0f8ff00;
 }
 
 @supports (backdrop-filter: blur(100px)) {
     .open,
     .primary-header[data-visible="true"] {
+        
+        border: 1px solid #f0f8ff1f;
         background-color: #2657ea99 !important;
         backdrop-filter: blur(var(--blur,10px)) !important;
     }
@@ -489,7 +492,7 @@ footer {
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background-color: var(--accent);
-    border-radius: 10px;
+    border-radius:3px;
     transition: background-color 1.3s ease-in-out;
   }
   
